@@ -1,0 +1,30 @@
+<div class="modal animated fadeIn" id="prodReviewModal" role="dialog" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow-lg rounded-0">
+      <div style="border: none" class="modal-header pb-0">
+        <h5 class="modal-title w-100" id="staticBackdropLabel">{{'Buyer_Product_Details.Your_Review'|translate}}</h5>
+        <button (click)="hide_review_modal()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body row">
+        <div class="col-md-12">
+          <div class="card" style="border: none">
+            <div class="">
+              <div class="form-group">
+                <textarea [(ngModel)]="reviewText" class="form-control" id="review"
+                  placeholder="Type your comments here.." rows="4"></textarea>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary btn-md btn-block login_btn" type="button" (click)="addComments()">
+                  {{'Seller_Tickets.Submit'|translate}}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-spinner></ngx-spinner>

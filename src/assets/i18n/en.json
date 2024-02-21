@@ -1,0 +1,472 @@
+{
+    "Buttons":{
+        "Save":"Save",
+        "View":"View"
+    },
+    "Nav":{
+        "Home":"Home",
+        "About_Us":"About Us",
+        "Categories":"Categories",
+        "Our_Partners":"Our Partners",
+        "Contact_Us":"Contact Us",
+        "Sell_On_Emdad":"Sell On EMDAD",
+        "Sign_In":"Sign in",
+        "Sign_Up":"Sign up",
+        "Change_Language":"Change Language",
+        "Cart":"Cart",
+        "Notifications":"Notifications",
+        "Profile_Settings":"Profile Settings",
+        "Change_Password":"Change Password",
+        "Order_History":"Order History",
+        "Manage_Quotation":"Manage Quotation",
+        "Update":"Update"
+        
+    },
+    "Header_DropDowns":{
+        "My_Profile":"My Profile",
+        "Track_Orders":"Track Orders",
+        "My_Wishlist":"My Wishlist",
+        "Raise_a_support":"Raise a support ticket",
+        "Log_Out":"Logout",
+        "Quotations":"Quotations"
+    },
+    "Banner":{
+        "Search":"Search For Products",
+        "All_Cat":"All Categories"
+    },
+    "Home":{
+        "Popular_Products":"Popular Products",
+        "Popular_Categories":"Popular Categories",
+        "Recent_Products":"Recent Products",
+        "View_More":"View More",
+        "No_Product":"No more products to show",
+        "No_Item":"No item to show",
+        "Brands":"Manufacturers",
+        "Colors":"Colors",
+        "Price":"Price",
+        "Search_Result":"Search Result",
+        "Items":"items",
+        "Clear":"Clear All",
+        "Verify_pay":"Verifying Payment"
+    },
+    "Buyer_Profile":{
+        "Header":"My Profile"
+    },
+    "Buyer_Profile_Form":{
+        "Full_Name":"Full Name",
+        "Comapany_Name":"Company Name (Optional)",
+        "Email":"Email",
+        "Mobile_Number":"Mobile Number",
+        "Address":"Address",
+        "Country":"Country",
+        "Select_one":"Select one",
+        "City":"City",
+        "Area":"Area",
+        "Zip_Code":"Zip Code",
+        "Save":"Save"
+    },
+    "Buyer_Change_Password_Form":{
+        "Current_Password":"Current Password",
+        "New_Password":"New Password",
+        "Confirm_Password":"Confirm Password"
+    },
+    "Buyer_Order_History":{
+        "Order_ID":"Order ID",
+        "Payment_Date":"Payment Date",
+        "Delivery_Date":"Delivery Date",
+        "Amount":"Amount",
+        "View":"View",
+        "No_Data":"No data available"
+       
+    },
+    "Buyer_Quotation_History":{
+        "Quotation_ID":"Quotation ID",
+        "Date":"Date",
+        "RFQ_ID":"RFQ ID",
+        "Seller_Name":"Seller Name",
+        "Status":"Status",
+        "Initiated":"Initiated",
+        "Sent":"Sent",
+        "Quotation_Received":"Quotation Received",
+        "Completed":"Completed",
+        "Closed":"Closed",
+        "Qunatity":"Qunatity",
+        "Unit_Price":"Unit Price",
+        "Total_Price":"Total Price",
+        "Message":"Message",
+        "Attachments":"Attachments",
+        "Comment":"Comment",
+        "reason_denial":"Add reason for denial",
+        "Accept":"Accept",
+        "Deny":"Deny",
+        "Checkout":"Checkout"
+    },
+    "Footer":{
+        "Slogan":"Your Slogan Here",
+        "Company":"COMPANY",
+        "About_Us":"ABOUT US",
+        "Our_Partners":"OUR PARTNERS",
+        "Sell_On_Emdad":"SELL ON EMDAD",
+        "Help":"HELP",
+        "Contact":"CONTACT",
+        "Privacy_Policy":"PRIVACY POLICY",
+        "Terms":"TERMS AND CONDITIONS",
+        "Send_Suggestion":"SEND PRODUCT SUGGESTION TO EMDAD"
+    },
+    "Seller_Profile":{
+      "Company_Profile":"Company Profile",
+      "Company_Name":"Company Name",
+      "Attachments":"Attachments",
+      "Seller_Description":"Seller Description",
+      "Zip_Code":"Zip Code",
+      "Area":"Area",
+      "Select_City":"Select City",
+      "Select_Country":"Select Country",
+      "City":"City",
+      "Country":"Country",
+      "Company_Address":"Company Address",
+      "Company_Mobile_Number":"Company Mobile Number",
+      "Company_Email":"Company Email",
+      "Max_Two":"(max. two attachments allowed)"
+    },
+    "Seller_Menu":{
+        "Dashboard":"Dashboard",
+        "Manage_Profile":"Manage Profile",
+        "Company_Profile":"Company Profile",
+        "Bank_Account_Information":"Bank Account Information",
+        "Change_Password":"Change Password",
+        "Manage_Subscription":"Manage Subscription",
+        "Subscription_Plan":"Subscription Plan",
+        "Payment_History":"Payment History",
+        "Manage_Products":"Manage Products",
+        "Product_Categories":"Product Categories",
+        "Bulk_Products_Import":"Bulk Products Import",
+        "Upload_Products":"Upload Products",
+        "Manage_RFQs":"Manage RFQs",
+        "Manage_Quotations":"Manage Quotations",
+        "Manage_Orders":"Manage Orders",
+        "Current_Orders":"Current Orders",
+        "Order_History":"Order History",
+        "Invoices":"Invoices",
+        "Support":"Support"
+    },
+    "Seller_Dashboard":{
+        "Quick_View":"Quick View",
+        "rfq_id":"RFQ ID",
+        "date":"Date",
+        "status":"Status",
+        "Quotations_List":"Quotations List",
+        "Quotation_ID":"Quotation ID",
+        "Sent":"Sent",
+        "Waiting":"Waiting",
+        "Completed":"Completed",
+        "Order_ID":"Order ID",
+        "Payment_Date":"Payment Date",
+        "Delivery_Date":"Delivery Date",
+        "Amount":"Amount",
+        "Recieved":"Recieved",
+        "Delivered":"Delivered",
+        "Processing": "Processing",
+        "Closed": "Closed"
+    },
+    "Seller_Bank_Info":{
+        "title":"Bank Account Information",
+        "Number":"Bank Account Number",
+        "Account_Letter":"Stamped Account Letter",
+        "Bank_Name":"Name of Bank",
+        "Swift_Code":"Swift Code",
+        "Account_Name":"Account Name",
+        "Bank_Address":"Bank Address",
+        "isInfo":"Max one file is allowed.You can upload or replace file by removing existing one"
+    },
+    "Seller_Subscription":{
+        "title":"Choose Subscription Plan",
+        "Half_Yearly":"Half yearly",
+        "Yearly":"Yearly",
+        "VAT":"VAT Inclusive",
+        "Discount":"Discount is SAR",
+        "Proceed":"Proceed To Pay",
+        "Apply":"Apply",
+        "Coupon_Text":"Enter Discount Coupon",
+        "Plan_Name":"Subscription Plan Name",
+        "Expired_Date":"Expired Date"
+    },
+    "Seller_Product_Categories":{
+        "title":"Product Categories",
+        "Product_Name":"Product Name",
+        "Bulk_Delete":"Bulk Delete",
+        "Delivery_Method":"Delivery Method",
+        "Stock":"Stock",
+        "Unit_Price":"Unit Price",
+        "Unit_of_measurement":"Unit of measurement",
+        "DDP":"DDP",
+        "ExWorks":"Ex-Works",
+        "Days": "days"
+
+    },
+    "Seller_Bulk_Upload_Product":{
+        "title":"Bulk Upload Product",
+        "Info_Text":"You must select a child category before uploading products in bulk. Here's a sample file that shows how to upload in bulk!",
+        "Download":"Download Sample File",
+        "Next":"Next",
+        "placeholder_text1":"Drop to attach file or choose from finder",
+        "placeholder_text2":"Must be in .xls format.",
+        "waiting_text1":"Please be patient until the product",
+        "waiting_text2":"uploaded successfully.",
+        "instruction1":"Please upload a file directory",
+        "instruction2":"uploaded successfully.",
+        "instruction3":"Please upload a file directory",
+        "instruction4":"for all of your products",
+        "success_text":"Products uploaded successfully!",
+        "Finish":"Finish",
+        "Submit":"Submit"
+    },
+    "Seller_Upload_Product":{
+        "title":"Upload Product",
+        "Product_Delivery_Method":"Product Delivery Method",
+        "Set_Lead_Time":"Set Lead Time",
+        "Product_Unit_Price":"Product Unit Price",
+        "VatEx":"(VAT exclusive)",
+        "Image_Upload_Instruction":"max. two images can be uploaded",
+        "Product_Attachments":"Product Attachments",
+        "Select_Category":"Select Category",
+        "Select_Sub_Category":"Select Sub Category",
+        "Select_Child_Category":"Select Child Category",
+        "Product_Details":"Product Details",
+        "Manufacturer_Name":"Manufacturer Name",
+        "prod_size":"Product Size",
+        "Product_Stock":"Product Stock",
+        "Size":"Size",
+        "Ex_Works_20_days":"Ex Works 20 days",
+        "ddp_lead_time":"XX days (DDP)",
+        "ddp_destination":"DDP Destination",
+        "Shop_Pick_Up_Location":"Shop Pick Up Location",
+        "DDP_Destination":"DDP Destination",
+        "Product_Image":"Product Image"
+    },
+    "Seller_RFQ":{
+        "title":"Manage RFQs",
+        "Sort":"Sort By Date",
+        "Buyer_Name":"Buyer Name",
+        "Created":"Created",
+        "Buyer":"Buyer",
+        "Make_Quote":"Make A Quotation",
+        "Product_Quantity":"Product Quantity",
+        "Unit_Price":"Unit Price",
+        "Unit_Of_Measurement":"Unit Of Measurement",
+        "Commission":"Commission will be added",
+        "Quotation_Attachments":"Quotation Attachments",
+        "Product_Description":"Product Description",
+        "Time":"Time",
+        "Quantity":"Quantity"
+    },
+    "Seller_Quotes":{
+        "ReSubmit":"Resubmit",
+        "Filter_by_Status":"Filter by Status",
+        "Quote_Id":"Quotation ID",
+        "Max_Two_Files":"You can attach maximum two files"
+    },
+    "Seller_Order_History":{
+        "Paid_Status":"Paid",
+        "Unpaid_Status":"Unpaid",
+        "Total":"Total",
+        "Order_Date":"Order Date",
+        "Payment_Status":"Payment Status",
+        "Total_Price":"Total Price",
+        "Quantity":"Quantity",
+        "Proof_PDF":"Proof"
+    },
+    "Seller_Invoice":{
+        "Invoice_ID":"Invoice ID",
+        "Pending":"Pending"
+    },
+    "Seller_Tickets":{
+        "New_Ticket":"New Ticket",
+        "Ticket_List":"Ticket List",
+        "Report_ID":"Report ID",
+        "Subject":"Subject",
+        "Running":"Undergoing",
+        "Solved":"Resolved",
+        "Initiated":"Initiated",
+        "Date":"Date",
+        "Details":"Details",
+        "Admin_Response":"Admin Response",
+        "Create_Ticket":"Create New Ticket",
+        "Submit":"Submit",
+        "Upload_image":"Upload Image",
+        "Issue_Title_Error":"Write your subject here",
+        "Issue_Description_Error":"Write down the issue in details..."
+      },
+      "Buyer_Cart":{
+        "My_Cart":"My Cart",
+        "Sub_Total":"Sub Total",
+        "Discount":"Discount",
+        "VAT":"VAT",
+        "Proceed":"Proceed",
+        "Add_discount":"Coupon Added"
+    },
+    "Buyer_Checkout":{
+        "title":"Checkout",
+        "Addresses":"Addresses",
+        "New_Address":"New Address",
+        "Sub_Total":"Sub Total",
+        "required":"required",
+        "Choose_Payment":"Choose Payment Method",
+        "Card":"Card",
+        "Wire":"Wire Transfer",
+        "Place_Order":"Place Order"
+    },
+    "Buyer_Order_Details":{
+        "Title":"Order Details",
+        "Order_placed":"Order placed",
+        "Order_Confirmed":"Order Confirmed",
+        "Order_Processing":"Order Processing",
+        "Order_Completed":"Order Completed",
+        "Payment_Details":"Payment Details",
+        "Payment_Method":"Payment Method",
+        "Wire_Transfer":"Wire-Transfer",
+        "Wire_Text":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "Account_Number":"Account Number",
+        "Upload_Invoice":"Upload Invoice",
+        "Download_Invoice":"Download Invoice",
+        "Account_Holder":"Account Name",
+        "Bank_Name":"Bank Name",
+        "Swift_Code":"Swift Code",
+        "Bank_Address":"Bank Address"
+    },
+    "Buyer_Support_Ticket":{
+        "Title":"Raise A Support Ticket",
+        "New_Ticket":"Open a New Ticket",
+        "Ticket_ID":"Ticket ID",
+        "Subject":"Subject",
+        "Description":"Description",
+        "Tell_us":"Tell Us More",
+        "Order_no":"Order Number(Optional)",
+        "Order_place":"Order number"
+      
+    },
+    "Seller_Current_Orders": {
+        "Update_Status": "Update Status",
+        "Progress": "In Progress",
+        "Delivered": "Delivered",
+        "Completed": "Completed",
+        "Delivery_Attach_Message":"Please upload a proof of delivery",
+        "Delivery_Note":"Delivery Note"
+    },
+    "Our_Partners_Common":{
+        "Success_Stories":"Partner Success Stories"
+    },
+    "Seller_Sign_Up":{
+        "Join_Us":"Join Us",
+        "text1":"Let’s begin the journey !",
+        "Password":"Password",
+        "Commercial_Registration":"Commercial Registration",
+        "Expiry_Date":"Expiry Date",
+        "VAT_Certificate":"VAT Certificate",
+        "Terms":"I agree to EMDAD Terms and Condtions, Privacy Policy & Provided Correctness of information",
+        "Register":"Register",
+        "Already_have":"Already have an account?"
+    },
+    "Seller_Sign_In":{
+        "text1":"Hi, Let’s get started !",
+        "Remember_me":"Remember me",
+        "Forgot_Password":"Forgot your password?",
+        "Not_Seller":"Not a Seller yet?"
+    },
+    "Buyer_Sign_In":{
+        "Email":"Email",
+        "Password":"Password",
+        "Remember":"Remember me",
+        "Forgot":"Forgot password",
+        "Sign":"Sign in",
+        "No_Account":"No account yet?",
+        "Create_Account":"Create an account",
+        "require":"required"
+
+    },
+    "Buyer_Register":{
+        "Register":"Register",
+        "Full_Name":"Full Name",
+        "require":"required",
+        "Email":"Email",
+        "Password":"Password",
+        "Confirm_Pass":"Confirm Password",
+        "No_Match":"didn't match",
+        "Phone_Number":"Phone Number (optional)",
+        "Process":"Processing...",
+        "Account_No":"Have an account already"
+    },
+    "Seller_Product_Delete":{
+        "Delete_Prompt":"Do you want to delete those products",
+        "Delete":"Delete",
+        "Cancel":"Cancel"
+    },
+    "Buyer_Product_Details":{
+        "Add_Wishlist":"Add to Wishlist",
+        "Remove_Wishlist":"Remove From Wishlist",
+        "Customer_Review":"Customer Review",
+        "Pickup_Location":"Shop Pickup Location:",
+        "Not_Specified":"Not Specified",
+        "Stock":"Stock",
+        "Size":"Size",
+        "Add_to_Cart":"Add to Cart",
+        "Request_for_Quotation":"Request for Quotation",
+        "Seller_Name":"Seller Name:",
+        "Product_Details":"Product Details",
+        "Similar_Products":"Similar Products",
+        "Reviews":"Reviews",
+        "No_Comments":"No Comments Posted Yet",
+        "More_Comments":"More Comments",
+        "Submit_Review":"Submit your review",
+        "Seller_Description":"Seller Description",
+        "Brand_Name":"Manufacturer Name",
+        "Your_Review":"Your Review",
+        "DDP_Dest":"DDP Destination",
+        "Stock-Text":"The quantity must be>Stock"
+    },
+    "Privacy_Policy":{
+        "Privacy":"Privacy Policy",
+        "Policy":"Policy"
+    },
+    "Terms_Conditions":{
+        "Terms":"Terms & Conditions",
+        "Conditions":"Conditions"
+    },
+    "Forgot_Password":{
+        "Forget_Pass":"Forgot your password?",
+        "Sub_Text":"Lost your Password? Please enter your email address",
+        "Sub_Text2":"You will recieve a link to create a new password via email.",
+        "Button_Text":"Reset Password",
+        "Placeholder":"Enter your email here"
+    },
+    "Logout_Modal_Buyer":{
+        "Sure_Text":"Are you sure?",
+        "Logout_text":"Logout of EMDAD? Anyway! You can always login at any time.",
+        "Logout":"Logout",
+        "Cancel":"Cancel"
+    },
+    "add_manugacturer":{
+        "Enter_Manufacterer_Name":"Enter Manufacterer Name"
+    },
+    "Sell_on_emdad":{
+        "Login_text":"Login",
+        "Seller_Confirm":"Already a Seller",
+        "Ready_text":"READY TO BECOME",
+        "Emdad_Seller":"A EMDAD SELLER",
+        "How_to_Sell":"How to Sell on EMDAD",
+        "Product_Portfolio":"Products Portfolio",
+        "Why_Us":"Why Us"
+    },
+    "No_data-msg":{
+        "Not_Available":"Not Available",
+        "Upper_amount":"Must be the upper amount from stock",
+        "No_items_cart":"No items in your cart yet !",
+        "Verify_Account":"Verifying Email account",
+        "Token_msg":"A token has been sent to your mail. Please enter the token below.",
+        "Enter_token":"Enter token",
+        "Enter_new_pass":"Enter new password"
+    }
+    
+}
+
+

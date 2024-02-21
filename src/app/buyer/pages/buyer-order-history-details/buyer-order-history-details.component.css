@@ -1,0 +1,486 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+.header-text {
+  font-size: 48px;
+  line-height: 69px;
+  margin: 60px 0 40px;
+  color: #2b2b2b;
+}
+.prod-name{
+  overflow-wrap: break-word;
+}
+.sub-text1 {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+  color: rgba(43, 43, 43, 0.5);
+  overflow-wrap: break-word;
+}
+.custom-file-upload {
+  width:100%;
+  height: 140px;
+/*   background-image: url("../../../../assets/icons/upload-thin.svg");
+  background-repeat: no-repeat;
+  background-size: 5%;
+  background-position: center; */
+  border-radius: 5px;
+  border: 2px dashed #CFCFCF;
+  display: block;
+  /* padding: 6px 12px; */
+  cursor: pointer;
+  text-align: center !important;
+  justify-content: center;
+  align-items: center;
+display: flex;
+
+}
+.custom-file-upload img{
+height: 60px;
+width: 60px;
+}
+.file-name{
+  font-family: Jost;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 29px;
+text-decoration: underline;
+text-decoration-style: 1px solid #2B2B2B;
+color: #2B2B2B;
+margin-left: 10px;
+/* position: absolute;
+left: 54%;
+top: 40%; */
+}
+input[type="file"] {
+/* width:100%; */
+/* visibility: hidden; */
+  display: none;
+}
+.proceed.disabled,.proceed:disabled{
+  opacity: .65;
+}
+.sub-text2 {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  color: rgba(43, 43, 43, 0.5);
+  padding-top: 25px;
+  overflow-wrap: break-word;
+}
+
+.sub-text3 {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  color: #2b2b2b;
+  text-align: right;
+  padding-top: 25px;
+  overflow-wrap: break-word;
+}
+
+.order-num {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 29px;
+  color: #2b2b2b;
+}
+
+.order-num span {
+  font-weight: 500;
+}
+
+h5 {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 32px;
+  color: #2b2b2b;
+}
+.download-payment-history{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 35px;
+  color: #2b2b2b;
+  margin-top: 15px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  border: 2px dashed #CFCFCF;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+ text-indent: 10px;
+ -webkit-text-decoration: underline 1px #2b2b2b;
+         text-decoration: underline 1px #2b2b2b;
+ text-underline-offset: 2px;
+ text-align: center !important;
+  background-color: transparent !important;
+
+}
+.download-payment-history img{
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  margin-bottom:8px;
+}
+.download-btn {
+  background: #1f4f9e;
+  border-radius: 5px;
+  border: none;
+  font-family: Jost;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 35px;
+  /* identical to box height */
+  text-align: center;
+  color: #ffffff;
+  height: 80px;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-top: 15px;
+}
+
+.status-btn {
+  border-radius: 24px;
+  height: 48px;
+  margin: auto;
+  cursor: default;
+  margin-right: 15px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.processing{
+  background: rgba(244, 152, 20, 0.2);
+  color: #F49814;
+}
+.completed{
+  background: rgba(31, 79, 158, 0.2);
+  color: #1F4F9E;
+}
+.placed{
+  background: rgba(97, 191, 255, 0.2);
+  color: #61BFFF;
+}
+.confirmed{
+  background: rgba(73, 185, 127, 0.2);
+  color: #49B97F;
+}
+img {
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+}
+
+.card-body {
+  background: #fff;
+  padding: 60px 40px;
+}
+
+.cart-summery p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.cart-summery p span {
+  font-weight: 500;
+}
+
+.payment-summery {
+  margin-top: 40px;
+  margin-bottom: 120px;
+}
+
+.payment-summery > h4 {
+  font-size: 30px;
+  line-height: 43px;
+  font-family: Jost;
+font-style: normal;
+font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.payment-summery .name,.payment-summery .deets {
+  font-size: 20px;
+  line-height: 29px;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+.payment-summery .name{
+  font-weight: 500;
+}
+/* .payment-summery p span {
+  font-weight: 500;
+}
+ */
+.media:not(:last-child) {
+  border-bottom: 1px solid #cfcfcf;
+  margin-bottom: 30px;
+}
+
+.media:last-child {
+  margin-bottom: 0;
+}
+
+.media-body {
+  padding: 25px 0 40px 40px;
+}
+
+.order-num-div {
+  background: #ffffff;
+  padding: 25px 20px;
+}
+
+/*responsive*/
+@media only screen and (min-width: 300px) and (max-width: 991px) {
+  
+  .sub-text1 {
+    font-size: 16px;
+  }
+
+  .sub-text2 {
+    font-size: 16px;
+    padding-top: 0;
+  }
+
+  .sub-text3 {
+    font-size: 16px;
+    text-align: left;
+    padding-top: 0;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    word-wrap: break-word;
+  }
+  .status-btn {
+    height: 40px;
+    font-size: 16px;
+  }
+  .order-num-div {
+    padding: 15px;
+  }
+  .card-body {
+    padding: 20px 15px;
+  }
+  .media-body {
+    padding: 0px 0 0px 15px;
+  }
+  .cart-summery p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .order-items {
+    margin-bottom: 15px;
+  }
+  img {
+    margin-bottom: 15px;
+  }
+  .payment-summery {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+ 
+/*   .payment-summery p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  } */
+  
+}
+@media only screen and (min-width: 300px) and (max-width: 575px) {
+  img {
+    width: 70px;
+    height: 70px;
+  }
+  .header-text {
+    margin: 20px 0 20px;
+    font-size: 30px;
+    line-height: 48px;
+  }
+  .download-payment-history {
+    font-size: 16px;
+    line-height: 22px;
+    min-height: 50px;
+  }
+  .download-payment-history img{
+    height: 28px;
+    width:28px
+  }
+  .payment-summery h4 {
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 15px;
+  }
+  .payment-summery .name,.payment-summery .deets {
+    font-size: 15px !important;
+    line-height: 20px !important;
+    
+  }
+  .download-btn {
+    font-size: 16px;
+    height: 45px;
+  
+  }
+  .mobile-center{
+    text-align: center;
+  }
+  .custom-file-upload img{
+    height: 50px !important;
+  }
+  .file-name{
+    font-size: 14px;
+    line-height: 20px;
+    margin-left: 5px;
+  }
+}
+@media all and (min-width:576px) and (max-width:768px){
+  .custom-file-upload img{
+    height: 50px !important;
+  }
+  .file-name{
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+@media only screen and (min-width:576px) and (max-width:991px){
+  .header-text {
+    margin: 20px 0 20px;
+    font-size: 40px;
+    line-height: 59px;
+  }
+  .download-payment-history {
+    font-size: 20px;
+    line-height: 30px;
+    min-height: 50px;
+  }
+  .download-payment-history img{
+    height: 40px;
+    width:40px
+  }
+  .payment-summery>h4 {
+    font-size: 28px;
+    line-height: 38px;
+    margin-bottom: 15px;
+  }
+  .payment-summery .name,.payment-summery .deets {
+    font-size: 18px !important;
+    line-height: 26px !important;
+    
+  }
+  .download-btn {
+    font-size: 20px;
+    height: 60px;
+  }
+ }
+
+ .status-txt{
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+  color: #F49814;
+ }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .prod-name {
+    padding-top: 25px;
+  }
+  .sub-text2 {
+    padding-top: 45px;
+  }
+
+  .sub-text3 {
+    text-align: right;
+    padding-top: 45px;
+  }
+  
+}
+
+
+
+
+ @media all and (min-width:992px) and (max-width:1200px){
+.header-text{
+  font-size: 32px !important;
+line-height: 46px !important;
+}
+.status-btn{
+  height: 36px;
+  font-size: 16px;
+line-height: 23px;
+}
+.order-num{
+  font-size: 18px;
+line-height: 26px;
+}
+img{
+  height: 100px;
+}
+.prod-name{
+  font-size: 16px;
+line-height: 23px;
+}
+.order_no,.sub-text1{
+  font-size: 14px;
+line-height: 20px;
+}
+.media-body{
+  padding-left: 15px;
+}
+.sub-text2,.sub-text3{
+  font-size: 16px;
+line-height: 23px;
+text-align: left;
+}
+.cart-summery p{
+  font-size: 14px;
+line-height: 20px;
+}
+.card-body{
+  padding: 20px !important;
+}
+.payment-summary{
+  margin-top: 20px;
+}
+.payment-summery > h4{
+  font-size: 16px !important;
+line-height: 23px !important;
+margin-bottom: 15px;
+}
+.payment-summery .name,.payment-summery .deets{
+  font-size: 14px;
+line-height: 20px;
+margin-bottom: 15px;
+}
+.custom-file-upload{
+  height: 80px;
+}
+.custom-file-upload img{
+  height: 23px;
+  width: 23px;
+}
+.file-name{
+  font-size: 14px;
+line-height: 20px;
+}
+.download-btn{
+  height: 48px;
+  font-size: 16px !important;
+line-height: 23px !important;
+}
+ }

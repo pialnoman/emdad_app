@@ -1,0 +1,312 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3 class="mx-auto header-text">{{'Buyer_Checkout.title'|translate}}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card-body">
+        <h4>{{'Buyer_Checkout.Addresses'|translate}}</h4>
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-8">
+            <div
+              [ngClass]="
+                selected_address === i
+                  ? 'address-row address-row-selected'
+                  : 'address-row'
+              "
+              class="address-row mb-3"
+              id="{{ 'address_div_' + address.id }}"
+              *ngFor="let address of addresses; let i = index"
+              (click)="selected_address = i"
+              style="cursor: pointer"
+            >
+              <mat-radio-group [(ngModel)]="selected_address">
+                <mat-radio-button
+                  class="example-radio-button ml-2"
+                  [value]="i"
+                  color="accent"
+                >
+                </mat-radio-button>
+                <span *ngIf="user" class="full-name">{{user.full_name}}</span>
+                <br>
+                <div class="full-name add-space">{{ address.address }}, {{address.city.name}}, {{address.city.country.name}} {{address.zip_code}}</div>
+              </mat-radio-group>
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+            <button
+              mat-button
+              (click)="show_address_form()"
+              (click)="scrollToAddressForm(newAddressForm)"
+              class="btn btn-default btn-block add-address"
+              type="button"
+            >
+              <span><i class="fas fa-plus"></i></span> {{'Buyer_Checkout.New_Address'|translate}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-body cart-summery">
+        <div class="d-flex justify-content-between">
+          <div>
+            <p>{{'Buyer_Checkout.Sub_Total'|translate}} ({{totalItems}} {{totalItems>1?'items':'item'}})</p>
+          </div>
+          <p>SAR {{ cash_details.subtotal | number: "2.2-2" }}</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <div>
+            <p>{{'Buyer_Cart.Discount'|translate}}</p>
+          </div>
+          <p>- SAR {{ cash_details.discount | number: "2.2-2" }}</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <div>
+            <p>{{'Buyer_Cart.VAT'|translate}}</p>
+          </div>
+          <p>+ SAR {{ cash_details.vat | number: "2.2-2" }}</p>
+        </div>
+        <hr />
+        <div class="d-flex justify-content-between">
+          <div>
+            <p class="mb-0"><span>{{'Seller_Order_History.Total'|translate}}</span></p>
+          </div>
+          <p class="mb-0">
+            <span>SAR {{ cash_details.total | number: "2.2-2" }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8" #newAddressForm>
+      <div *ngIf="new_address" class="add-address-div">
+        <form [formGroup]="addressForm" (ngSubmit)="onNewAddressFormSubmit()">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="form-group w-100">
+                  <label class="form-label">{{'Buyer_Profile_Form.Address'|translate}}</label>
+                  <small
+                    *ngIf="
+                      addressForm.get('address').errors &&
+                      new_address_add_form_submitted
+                    "
+                    class="errors ml-1"
+                    >*{{'Buyer_Checkout.required'|translate}}</small
+                  >
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Enter Address"
+                    formControlName="address"
+                  />
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group w-100">
+                  <label class="form-label">{{'Buyer_Profile_Form.Country'|translate}}</label>
+                  <small
+                    *ngIf="
+                      addressForm.get('country').errors &&
+                      new_address_add_form_submitted
+                    "
+                    class="errors ml-1"
+                    >*{{'Buyer_Checkout.required'|translate}}</small
+                  >
+                  <select
+                    class="form-control w-100"
+                    formControlName="country"
+                    (input)="onCountryChange($event.target.value)"
+                  >
+                    <option value="-1" selected>{{'Seller_Profile.Select_Country'|translate}}</option>
+                    <option
+                      *ngFor="let country of countries; let i = index"
+                      [value]="country.id"
+                    >
+                      {{ country.name }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group w-100">
+                  <label class="form-label">{{'Seller_Profile.City'|translate}}</label>
+                  <small
+                    *ngIf="
+                      addressForm.get('city').errors &&
+                      new_address_add_form_submitted
+                    "
+                    class="errors ml-1"
+                    >*required</small
+                  >
+                  <select class="form-control w-100" formControlName="city">
+                    <option value="-1" selected>{{'Seller_Profile.Select_City'|translate}}</option>
+                    <option
+                      *ngFor="let city of cities; let i = index"
+                      [value]="city.id | number"
+                    >
+                      {{ city.name }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group w-100">
+                  <label class="form-label">{{'Seller_Profile.Area'|translate}}</label>
+                  <input
+                    class="form-control"
+                    placeholder="Enter Area"
+                    type="text"
+                    formControlName="area"
+                  />
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group w-100">
+                  <label class="form-label">{{'Seller_Profile.Zip_Code'|translate}}</label>
+                  <small
+                    *ngIf="
+                      addressForm.get('zip_code').errors &&
+                      new_address_add_form_submitted
+                    "
+                    class="errors ml-1"
+                    >*required</small
+                  >
+                  <input
+                    class="form-control"
+                    placeholder="Enter Zip code"
+                    type="text"
+                    formControlName="zip_code"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group w-100">
+                  <button
+                    class="btn btn-block save-btn"
+                    type="submit"
+                    value="submit"
+                  >
+                    {{'Buttons.Save'|translate}}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-8 add-address-div">
+      <div class="card-body" style="background: #ffffff">
+        <div class="row mb-2">
+          <div class="col">
+            <h4>{{'Buyer_Checkout.Choose_Payment'|translate}}</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <button
+              id="a_card"
+              class="btn btn-block pay-option pay-option-selected"
+              (click)="show_card_inputs()"
+            >
+              {{'Buyer_Checkout.Card'|translate}}
+            </button>
+          </div>
+          <div class="col-sm-6 float-left">
+            <button
+              id="a_wire"
+              class="btn btn-block pay-option"
+              (click)="show_wired_inputs()"
+            >
+              {{'Buyer_Checkout.Wire'|translate}}
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-body" style="margin-top: 40px; margin-bottom: 120px;">
+        <mat-card class="example-card" *ngIf="isWired" style="margin-bottom: 30px;">
+          <mat-card-content *ngIf="isWired">
+              <p class="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum hasook
+              </p>
+            <p *ngFor="let info of admin_bank_info;let i=index" class="content"><span class="bold-content">{{'Buyer_Order_Details.Account_Holder'|translate}}: {{info.account_name}} </span> <br>
+              <span class="bold-content">{{'Buyer_Order_Details.Account_Number'|translate}}: </span>{{info.account_number}}<br>
+              <span class="bold-content">{{'Buyer_Order_Details.Bank_Name'|translate}}: </span>{{info.bank_name}}<br>
+              <span class="bold-content">{{'Seller_Bank_Info.Bank_Address'|translate}}: </span>{{info.bank_address}}<br>
+              <span class="bold-content">{{'Seller_Bank_Info.Swift_Code'|translate}}: </span>{{info.swift_code}}
+            </p>
+          </mat-card-content>
+          <!-- <mat-card-content *ngIf="isCard">
+              <div class="row">
+                  <div class="col">
+                      <mat-form-field class="example-full-width w-100">
+                          <mat-label>Card Number</mat-label>
+                          <input matInput placeholder="Card Number" #card_number />
+                      </mat-form-field>
+                  </div>
+              </div>
+              <div class="row mt-4">
+                  <div class="col-md-3">
+                      <mat-form-field class="example-full-width w-100">
+                          <mat-label>Card Holder</mat-label>
+                          <input matInput placeholder="Card Holder Name" data-paylib="number" #card_holder />
+                      </mat-form-field>
+                  </div>
+                  <div class="col-md-3">
+                    <label>Expires</label>
+                  <input type="text" class="form-control" placeholder="Expire date"/>
+                      <mat-form-field class="example-full-width w-100">
+                          <mat-label>Expires month</mat-label>
+                          <input matInput placeholder="Expiry date" data-paylib="expmonth"
+                              #card_expiry_date />
+                      </mat-form-field>
+                  </div>
+                  <div class="col-md-3">
+                      <label>Expires</label>
+                      <input type="text" class="form-control" placeholder="Expire date"/>
+                      <mat-form-field class="example-full-width w-100">
+                          <mat-label>Expires Year</mat-label>
+                          <input matInput placeholder="Expiry date" data-paylib="expyear" #card_expiry_date />
+                      </mat-form-field>
+                  </div>
+                  <div class="col-md-3">
+                    <label>CVC</label>
+                    <input type="text" class="form-control" placeholder="cvc"/>
+                    <mat-form-field class="example-full-width w-100">
+                        <mat-label>CVV</mat-label>
+                        <input matInput placeholder="security code" data-paylib="cvv" #card_cvv />
+                    </mat-form-field>
+                  </div>
+              </div>
+          </mat-card-content> -->
+          <mat-card-actions class="mb-1">
+            <a
+              href="javascript:void(0);"
+              (click)="download_bank_details()" class="down-details"
+              >
+                Download Bank details
+          </a>
+          </mat-card-actions>
+      </mat-card>
+        <div class="row">
+          <div class="col-sm-4">
+            <button
+              class="btn btn-block proceed-btn"
+              mat-raised-button
+              (click)="make_order()"
+            >
+              {{'Buyer_Checkout.Place_Order'|translate}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-spinner></ngx-spinner>

@@ -1,0 +1,201 @@
+<!-- 24 MARCH DYNAMIC-->
+<section class="login">
+    <div class="container">
+        <div class="login-holder">
+            <h2 class="d-inline-block">{{'Sell_on_emdad.Seller_Confirm' | translate}}?</h2>
+            <a target="_balnk" [routerLink]="['/dashboard/login']">
+                <button mat-flat-button>{{'Sell_on_emdad.Login_text'|translate}}</button>
+            </a>
+        </div>
+    </div>
+</section>
+<section class="register">
+    <div class="container">
+        <div style="background:#FFFFFF url('../../../../assets/become-a-seller-left.png') left top no-repeat;">
+            <div class="register-holder">
+                <h4 class="titlecase">{{'Sell_on_emdad.Ready_text'| translate}}</h4>
+                <h2 class="titlecase">{{'Sell_on_emdad.Emdad_Seller'| translate}}?</h2>
+                <br><br>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias soluta corrupti
+                    <br>
+                    pariatur id tempora aut facilis, sint perspiciatis odit eos ratione commodi!
+                </p>
+                <a [routerLink]="['/dashboard/signup']">
+                    <button mat-raised-button>{{'Nav.Sign_Up' | translate}}</button>
+                </a>
+            </div>
+        </div>
+        <div class="register-holder-mobile">
+           
+            <h4 class="titlecase">{{'Sell_on_emdad.Ready_text'| translate}}</h4>
+            <h2 class="titlecase">{{'Sell_on_emdad.Emdad_Seller'| translate}}?</h2>
+            <br><br>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias soluta corrupti
+                <br>
+                pariatur id tempora aut facilis, sint perspiciatis odit eos ratione commodi!
+            </p>
+            <a target="_balnk" [routerLink]="['/dashboard/signup']">
+                <button mat-raised-button>{{'Nav.Sign_Up' | translate}}</button>
+            </a>
+        </div>
+    </div>
+</section>
+<!--Why us section-->
+<section class="why-us" *ngIf="sellData">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-6 col-xs-12 col-sm-12 col-12">
+                <img src="{{base_url + sellData.image}}" alt="group" class="img-fluid us-img w-100 h-100">
+            </div>
+            <div class="col-md-12 col-lg-6 col-xs-12 col-sm-12 col-12">
+                <div class="text-div">
+                    <h1 class="heading pb-2">{{'Sell_on_emdad.Why_Us'| translate}}</h1>
+                    <div class="paradies">{{normalVal| htmltoPlain}}
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--products portfolio section-->
+<section class="portfolio" *ngIf="sellData">
+    <div class="container">
+        <div class="heading-text">
+            <h1 class="pb-2 heading s-head-p">{{'Sell_on_emdad.Product_Portfolio' | translate}}</h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-2 offset-md-0 col-md-6 col-sm-6 col-xs-6 col-12  custom-row" *ngFor="let item of sellData.sale_on_emdad_portfolio; let i=index">
+                <mat-card class="example-card h-100">
+                    <img mat-card-image src="{{base_url + item.logo}}"
+                        alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                        <p class="prod-card-text">
+                           {{item.name | titlecase}}
+                        </p>
+                        </mat-card-content>
+                </mat-card>
+            </div>
+          <!--   <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 col-12  custom-row">
+                <mat-card class="example-card h-100">
+                    <img mat-card-image src="../../../../assets/mro-spares.png"
+                        alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                        <p class="prod-card-text">
+                        MRO Spares
+                        </p>
+                        </mat-card-content>
+                </mat-card>
+            </div> -->
+<!--             <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 col-12  custom-row">
+                <mat-card class="example-card h-100">
+                    <img mat-card-image src="../../../../assets/piping.png"
+                        alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                        <p class="prod-card-text">
+                          Piping
+                        </p>
+                        </mat-card-content>
+                </mat-card>
+            </div> -->
+           <!--  <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 col-12  custom-row">
+                <mat-card class="example-card h-100">
+                    <img mat-card-image src="../../../../assets/valves.png"
+                        alt="Photo of a Shiba Inu" class="img-fluid">
+                    <mat-card-content>
+                        <p class="prod-card-text">
+                           Valves
+                        </p>
+                        </mat-card-content>
+                </mat-card>
+            </div> -->
+           <!--  <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 col-12 custom-row">
+                <mat-card class="example-card h-100">
+                    <img mat-card-image src="../../../../assets/construction-materia2.png"
+                        alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                        <p class="prod-card-text">
+                           Construction Material
+                        </p>
+                        </mat-card-content>
+                </mat-card>
+
+            </div> -->
+        </div>
+    </div>
+</section>
+<!--how to sell on emdad-->
+<section class="how-to-sell">
+    <div class="container">
+        <div class="heading-text">
+            <h1 class="pb-2 heading s-head">{{'Sell_on_emdad.How_to_Sell' | translate}}</h1>
+        </div> 
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-12 col-sm-12 col-xs-12 col-12">
+               <div class="img-div mt-3">
+                <img src="../../../../assets/how-to-sell.png" alt="" class="img-fluid sell-img">
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--our-partners section-->
+<div class="second-row" *ngIf="partnerArray">
+    <div class="container">
+
+        <div class="heading-text">
+            <h1 class="pb-2 heading text-center">{{'Nav.Our_Partners'|translate}}</h1>
+            <p class="subheading">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                Ipsum
+                has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                galley
+                of type and scrambled it to make a type specimen book.</p>
+        </div>
+        <div class="row justify-content-around">
+            <!--first line-->
+            <!--  <div class="col-lg-1 col-md-0 col-sm-0 col-xs-0 col-0 custom-row"></div> -->
+
+            <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 col-12 custom-row" *ngFor="let partner of partnerArray | slice:0:5 ">
+                <div class="card h-100">
+                    <div class="card-img text-center"> <img src="{{base_url + partner.logo}}" alt="hi8 logo"
+                            class="img-fluid"></div>
+                    <span class="card-text">{{partner.name}}</span>
+                </div>
+            </div>
+           <!--  <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 col-12 custom-row">
+                <div class="card h-100">
+                    <div class="card-img text-center"> <img src="../../../../assets/gr8.png" alt="gr8 logo"
+                            class="img-fluid"></div>
+                    <span class="card-text">gr.8</span>
+                </div>
+            </div> -->
+         <!--    <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 col-12 custom-row">
+                <div class="card h-100">
+                    <div class="card-img text-center"> <img src="../../../../assets/96Points.png"
+                            alt="96points logo" class="img-fluid"></div>
+                    <span class="card-text">96 Points</span>
+                </div>
+            </div> -->
+           <!--  <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 col-12 custom-row">
+                <div class="card h-100">
+                    <div class="card-img text-center"> <img src="../../../../assets/oem.png" alt="oemlogo"
+                            class="img-fluid"></div>
+                    <span class="card-text">oem</span>
+                </div>
+            </div> -->
+         <!--    <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 col-12 custom-row">
+                <div class="card h-100">
+                    <div class="card-img text-center"> <img src="../../../../assets/sansui.png" alt="sansui"
+                            class="img-fluid"></div>
+                    <span class="card-text">Sansui</span>
+                </div>
+            </div> -->
+       
+        </div>
+
+
+
+    </div>
+</div>

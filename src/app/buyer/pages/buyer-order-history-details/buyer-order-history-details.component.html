@@ -1,0 +1,208 @@
+<div class="container">
+  <div class="row justify-content-between">
+    <h3 class="col header-text">{{'Buyer_Order_Details.Title'|translate}}</h3>
+    <button
+      *ngIf="order_status == '1'"
+      type="button"
+      class="btn status-btn placed"
+    >
+      {{'Buyer_Order_Details.Order_placed'|translate}}
+    </button>
+    <button
+      *ngIf="order_status == '2'"
+      type="button"
+      class="btn status-btn confirmed"
+    >
+      {{'Buyer_Order_Details.Order_Confirmed'|translate}}
+    </button>
+    <button
+      *ngIf="order_status == '3'"
+      type="button"
+      class="btn status-btn processing"
+    >
+      {{'Buyer_Order_Details.Order_Processing'|translate}}
+    </button>
+    <button
+      *ngIf="order_status == '4'"
+      type="button"
+      class="btn status-btn completed"
+    >
+      {{'Seller_Dashboard.Delivered'|translate}}
+    </button>
+    <button
+      *ngIf="order_status == '5'"
+      type="button"
+      class="btn status-btn completed"
+    >
+      {{'Buyer_Order_Details.Order_Completed'|translate}}
+    </button>
+  </div>
+  <div class="row mt-30" *ngIf="orders?.length>0">
+    <div class="col">
+      <div class="order-num-div">
+        <p class="order-num mb-0">
+          <span>{{'Buyer_Order_History.Order_ID'|translate}}:</span> #{{ orders[0].order.order_code }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-between items" style="margin-top: 30px">
+    <div class="col-12 col-md-12 col-lg-8 order-items">
+      <div class="card-body">
+        <ul class="list-unstyled">
+          <li class="media" *ngFor="let product of orders; let i = index">
+            <img
+              class="mr-3"
+              src="{{ img_base_url + product.product.image1 }}"
+              alt="Generic placeholder image"
+            />
+            <div class="media-body row">
+              <div class="col-md-7 col-lg-6">
+                <h5 class="prod-name mt-0 mb-1">
+                  {{ product.product.name | titlecase }}
+                </h5>
+                <p
+                  class="sub-text1"
+                  *ngIf="product.product.delivery_method === 1"
+                >
+                <span class="order_no mr-1">#{{product.order.order_code}}</span> ({{'Seller_Product_Categories.DDP'|translate}})
+                </p>
+                <p
+                  class="sub-text1"
+                  *ngIf="product.product.delivery_method === 2"
+                >
+                <span class="order_no mr-1">#{{product.order.order_code}}</span> ({{'Seller_Product_Categories.ExWorks'|translate}})
+                </p>
+                <p class="status-txt">
+                  {{ get_product_status(product.product.id) }}
+                </p>
+              </div>
+              <div class="col-md-2 col-lg-2 ml-45">
+                <p class="sub-text2">{{ product.quantity| number:'2.0' }}</p>
+              </div>
+              <div class="col-md-3 col-lg-4">
+                <p style="color: #2b2b2b" class="sub-text3">
+                  SAR {{ cal_individual_total(i) | number: "2.2-2" }}
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-4">
+      <div class="card-body cart-summery">
+        <div class="d-flex justify-content-between">
+          <div>
+            <p>{{'Buyer_Cart.Sub_Total'|translate}} {{'('+orders?.length+' items)'}}</p>
+          </div>
+          <p>SAR {{ calcTotalPrice() | number: "2.2-2" }}</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <div>
+            <p>{{'Buyer_Cart.Discount'|translate}} ({{'Buyer_Cart.Add_discount'|translate}}) </p>
+          </div>
+          <p>- SAR {{ discount | number: "1.2-2" }}</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <div>
+            <p>{{'Buyer_Cart.VAT'|translate}}</p>
+          </div>
+          <p>+ SAR {{ vat | number: "2.2-2" }}</p>
+        </div>
+        <hr />
+        <div class="d-flex justify-content-between">
+          <div>
+            <p class="mb-0"><span>{{'Seller_Order_History.Total'|translate}}</span></p>
+          </div>
+          <p class="mb-0">
+            <span>SAR {{ orders[0]?.order.total_amount }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row d-flex flex-column" *ngIf="orders?.length > 0">
+    <!--wire transfer card-->
+    <div
+      *ngIf="orders[0].order.payment_type == 0"
+      class="col-12 col-sm-12 col-md-12 col-lg-8"
+    >
+      <div class="card-body payment-summery">
+        <h4>{{'Buyer_Order_Details.Payment_Details'|translate}}</h4>
+        <p>
+          <span class="name">{{'Buyer_Order_Details.Payment_Method'|translate}}:</span><span class="deets"> {{'Buyer_Order_Details.Wire_Transfer'|translate}}</span>
+        </p>
+        <p class="deets">
+          {{'Buyer_Order_Details.Wire_Text'|translate}}
+        </p>
+        <div *ngIf="admin_bank_info?.length>0">
+          <p *ngFor="let info of admin_bank_info;let i=index">
+            <span class="name">{{'Buyer_Order_Details.Account_Number'|translate}} : </span
+            ><span class="deets">{{info.account_number}}</span><br/>
+            <span class="name">{{'Buyer_Order_Details.Account_Holder'|translate}} : </span
+              ><span class="deets">{{info.account_name}}</span><br/>
+              <span class="name">{{'Seller_Bank_Info.Bank_Name'|translate}} : </span
+                ><span class="deets">{{info.bank_name}}</span>
+          </p>
+        </div>
+        <!--upload button-->
+        <div class="row">
+          <div class="col-md-12">
+   
+            <label for="attachments" class="custom-file-upload">
+              <input type="file" id="attachments" class="form-control" (change)="set_invoice($event)" />
+              <img src="../../../../assets/icons/upload-thin.svg" alt="">
+             <span class="file-name">{{file_name}}</span>
+            </label> 
+          
+         
+          </div>
+        </div>
+        <!--proceed button-->
+        <div class="row">
+          <div class="col-md-6 col-lg-6 col-sm-12 col-12 mobile-center">
+            <button [disabled]="!invoice.has('image')" (click)="uploadInvoice()" mat-raised-button class="download-btn proceed">{{'Buyer_Cart.Proceed'|translate}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--card payment card-->
+    <div
+      *ngIf="orders[0].order.payment_type == 1"
+      class="col-12 col-sm-12 col-md-12 col-lg-8"
+    >
+      <div class="card-body payment-summery">
+        <h4>{{'Buyer_Order_Details.Payment_Details'|translate}}</h4>
+        <p>
+          <span class="name">{{'Buyer_Order_Details.Payment_Method'|translate}}:</span
+          ><span class="deets"> Card </span>
+        </p>
+        <br />
+        <!--field for card number as ui,comment out if not needed-->
+        <p class="name">**** **** **** 1234</p>
+        <p>
+          <span class="name">{{'Buyer_Order_History.Payment_Date'|translate}}: </span
+          ><span class="deets">{{
+            formatDate(orders[0].order.order_datetime)
+          }}</span>
+        </p>
+        <!--download button-->
+        <div class="row">
+          <div class="col-md-6 col-lg-6 col-sm-12 col-12 mobile-center">
+            <button
+              mat-raised-button
+              class="download-btn"
+              *ngIf="dataLoaded"
+              (click)="createPdf()"
+            >
+              {{'Buyer_Order_Details.Download_Invoice'|translate}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-spinner></ngx-spinner>

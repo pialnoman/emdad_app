@@ -1,0 +1,126 @@
+<!--01st april 2021-->
+<section class="payment-history container">
+    <div class="page-heading-holder">
+      <h2 class="page-heading">{{'Nav.Order_History'|translate}}</h2>
+      <div class="sort-btn d-inline-block big-view">
+       
+        <span ngbDropdown class="dropping">
+          <button mat-stroked-button class="filter-btn" id="filter" ngbDropdownToggle>{{'Seller_Quotes.Filter_by_Status'|translate}} <mat-icon>
+              expand_more</mat-icon></button>
+            
+        <!--dropdown-->
+        <div id="lang-drop-down" ngbDropdownMenu aria-labelledby="filter">
+          <div ngbDropdownItem (click)="filter_orders(1);">
+            <span class="lan-title">{{'Seller_Order_History.Paid_Status'|translate}}</span>
+          </div>
+          <div style="padding: 0 15px">
+            <mat-divider></mat-divider>
+          </div>
+          <div ngbDropdownItem (click)="filter_orders(0);">
+            <span class="lan-title">{{'Seller_Order_History.Unpaid_Status'|translate}}</span>
+          </div>
+        </div>
+      </span>
+      </div>
+    </div>
+    <div class="mobile-button">
+     
+      <span ngbDropdown>
+        <button mat-stroked-button class="filter-btn" id="filter" ngbDropdownToggle>Filter by Status <mat-icon>expand_more
+          </mat-icon></button>
+      <!--dropdown-->
+      <div id="lang-drop-down" ngbDropdownMenu aria-labelledby="filter">
+        <div ngbDropdownItem>
+          <span class="lan-title">{{'Seller_Order_History.Paid_Status'|translate}}</span>
+        </div>
+        <div style="padding: 0 15px">
+          <mat-divider></mat-divider>
+        </div>
+        <div ngbDropdownItem>
+          <span class="lan-title">{{'Seller_Order_History.Unpaid_Status'|translate}}</span>
+        </div>
+      </div>
+    </span>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-12 card-header">
+          <div class="row">
+            <div class="col-md-2 name">
+               {{'Seller_Dashboard.Order_ID'|translate}}
+            </div>
+            <div class="col-md-2 name">
+                {{'Seller_Dashboard.Payment_Date'|translate}}
+            </div>
+            <div class="col-md-2 name">
+               {{'Seller_Dashboard.Delivery_Date'|translate}}
+            </div>
+  
+            <div class="col-md-2 name">
+                {{'Seller_Dashboard.status'|translate}}
+            </div>
+            <div class="col-md-2 name">
+                {{'Seller_Dashboard.Amount'|translate}}
+            </div>
+            <div class="col-md-2 name">
+  
+            </div>
+          </div>
+        </div>
+  
+        <mat-divider></mat-divider>
+  
+        <!--cards if valid data-->
+        <div class="col-md-12 cards" *ngIf="filtered_orders">
+          <div class="show-values" *ngFor="let item of filtered_orders">
+            <div class="row">
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12 value">
+                <span> #{{item.order.order_code}}</span>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12 value">
+                <span><span class="mobile-name"> {{'Seller_Dashboard.Payment_Date'|translate}}:</span> {{item.order.order_payment?.length>0 ? formatDate(item.order.seller_payment_date) : '-'}}</span>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12 value">
+                <span><span class="mobile-name">{{'Seller_Dashboard.Delivery_Date'|translate}}:</span> {{formatDate(item.delivery_date)}}</span>
+              </div>
+              
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12 value">
+                <span *ngIf="item.order.seller_payment_status == 1">{{'Seller_Order_History.Paid_Status'|translate}}</span>
+                <span *ngIf="item.order.seller_payment_status == 0">{{'Seller_Order_History.Unpaid_Status'|translate}}</span>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12 value">
+                <span><span class="mobile-name"> {{'Seller_Dashboard.Amount'|translate}} :</span>SAR {{item.order.total_amount}}</span>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-12 col-12 value mobile-btn">
+                <span class="big-view"><button class="edit-product-btn" mat-button
+                    (click)="openDialog(item);">{{'Buyer_Order_History.View'|translate}}</button></span>
+                <span class="mobile-name"><button class="edit-product-btn mob" mat-raised-button
+                    (click)="openDialog(item);">{{'Buyer_Order_History.View'|translate}}</button></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--cards if no data-->
+        <div class="col-md-12" *ngIf="filtered_orders">
+          <div class="no-data mt-2"
+            *ngIf="filtered_orders == null || filtered_orders == undefined || filtered_orders?.length == 0">
+            {{'Buyer_Order_History.No_Data'|translate}}
+          </div>
+        </div>
+
+        <!--pagination-->
+    <!--     <div class="col-md-12 col-12 mt-2 pagination-show" *ngIf="filtered_orders">
+          <mat-paginator *ngIf="filtered_orders != null" [length]="filtered_orders.length" [pageSize]="10"
+            [pageSizeOptions]="[5, 10, 15,20]" (page)="getPaginatorData($event)">
+          </mat-paginator>
+        </div> -->
+  <!--total amount-->
+  <div class="col-md-12" *ngIf="filtered_orders != null || filtered_orders != undefined">
+    <div class="total-order-price mb-3">
+        {{'Seller_Order_History.Total'|translate}}: SAR{{get_total()}}
+    </div>
+  </div>
+  
+      </div>
+    </div>
+  </section>

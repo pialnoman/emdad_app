@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;900&display=swap");
+.dialogue-holder{
+  font-family: Jost !important;
+}
+.order-data {
+  margin-bottom: 30px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+::ng-deep .mat-dialog-container {
+  padding: 30px;
+  width: 900px;
+  border-radius: 0;
+}
+.mat-dialog-actions>button{
+  background-color: white !important;
+  background: white !important;
+  color: #FF4B55;
+float: right;
+ margin-top: -35px;
+ padding: 0;
+ font-size: 16px;
+ font-weight: normal !important;
+ outline: none !important;
+ border: 0px transparent !important;
+
+
+}
+.top-details{
+  font-family: Jost;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 26px;
+color: #2B2B2B;
+}
+.prod{
+  font-weight: 400 !important;
+}
+.name{
+  font-family: Jost;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 26px;
+color: #2B2B2B;
+
+
+}
+.value{
+  font-family: Jost;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 26px;
+color: #2B2B2B;
+/* word-wrap: break-word; */
+white-space: pre-line;
+
+}
+
+.card-header{
+  background-color: #ffff;
+  background-color: none !important;
+  border-bottom: 1px solid #EAEAEA;
+ 
+  
+ /*  box-shadow: 0px 7px 35px rgba(31, 79, 158, 0.1); */
+}
+
+.show-values{
+  background: #FFFFFF;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 15px;
+  }
+  .total-order-price {
+    font-family: Jost;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 26px;
+margin-top: 15px;
+text-align: right;
+color: #2B2B2B;
+  }
+  /*responsive :/ -_- */
+  @media all and (min-width:992px){
+.amount{
+  text-align:right;
+}
+.show-values:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.mobile-name{
+  display:none;
+}
+  }
+  @media all and (min-width:290px) and (max-width:992px){
+.card-header{
+  display:none;
+}
+.mobile-name{
+  display: inline-block !important;
+}
+.value,.mobile-name,.total-order-price,.top-details,.prod{
+  font-size: 16px;
+  line-height: 23px;
+  }
+
+  }
+  @media all and (min-width:768px) and (max-width:992px){
+    .page-heading{
+      padding:15px 0;
+      font-size: 35px;
+    line-height: 55px;
+    }
+    
+  }

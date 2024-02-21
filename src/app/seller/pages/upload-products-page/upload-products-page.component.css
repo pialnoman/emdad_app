@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;900&display=swap");
+
+*:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.page-heading {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  padding: 40px 0;
+  margin: 0;
+  line-height: 69px;
+}
+
+.card {
+  padding: 40px;
+  border: none;
+  border-radius: 0;
+}
+
+.login-form-holder {
+  padding: 0 60px;
+}
+
+.login_btn {
+  background: #1f4f9e;
+  border-radius: 5px;
+  height: 80px;
+  font-weight: 500;
+  font-size: 24px;
+  width: 300px;
+  font-family: Jost;
+}
+
+.login-header {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  text-align: center;
+  color: #2b2b2b;
+  margin-top: 70px;
+  margin-bottom: 10px;
+}
+
+.login-sub-header {
+  font-weight: normal;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+label {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 29px;
+}
+
+.card {
+  border: none;
+  width: 100%;
+}
+
+.btn {
+  border: none;
+}
+
+.card-header {
+  background-color: #f8f9fa00;
+  border: none;
+}
+
+.form-control {
+  background: #efefef;
+  border-radius: 5px;
+  border: none;
+  height: 80px;
+  font-size: 20px;
+  line-height: 29px;
+}
+
+.form-label,select,select option {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 29px;
+  color: #2b2b2b;
+}
+
+.bottom-text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 29px;
+  text-align: center;
+  color: #2b2b2b;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-top: 7px;
+}
+
+.input-group-text {
+  border: 0 !important;
+  background: #efefef;
+  padding: 0 22px;
+  font-size: 17px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+
+
+.social-icon {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+
+.alert-danger {
+  background: transparent;
+  border: none;
+  color: #ff5f92;
+}
+
+.card-body {
+  padding: 0;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  width: 80px;
+  height: 80px;
+  background-image: url("../../../../assets/icons/Uploadupload-grey.png");
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center center;
+  border-radius: 5px;
+  border: 3px dashed #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.attached-file {
+  display: inline-block;
+  vertical-align: top;
+  list-style: none !important;
+  font-size: 20px;
+}
+
+.attached-file button {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  padding: 0;
+  background: #ff4b55;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+.attached-file button img{
+  margin-bottom: 12px;
+}
+
+.attached-file li {
+  word-break: break-all;
+}
+
+textarea {
+  height: 150px !important;
+  padding: 15px;
+  font-size:20px;
+  line-height:29px;
+  font-family: Jost;
+}
+
+.img-preview-div {
+  position: relative;
+  vertical-align: top;
+}
+
+.img-preview-div img {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.img-preview-div button {
+  background: #ff4b55;
+  border-radius: 50%;
+  width: 20px;
+  padding: 0;
+  height: 20px;
+  position: absolute;
+  min-width: 20px;
+  top: -10px;
+  right: 7px;
+}
+
+.img-preview-div button img {
+  width: 20px;
+  height: 20px;
+  vertical-align: top;
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1600px !important;
+  }
+}
+@media only screen and (min-width:290px) and (max-width:575px){
+  label,.form-check-label,.join-text,input,textarea,.attached-file{
+    font-size: 16px;
+    line-height: 23px;
+  }
+  .login_btn{
+    height: 50px;
+    font-size: 18px;
+    line-height: 25px;
+    width: 180px;
+  
+  }
+  .form-control{
+    height: 60px;
+    font-size: 16px;
+    line-height: 23px;
+  }
+  .page-heading{
+    font-size: 32px;
+    line-height: 46px;
+  }
+  .container{
+    padding: 15px;
+  }
+  .card{
+    padding: 10px;
+  }
+  .submit-btn{
+    text-align: center !important;
+  }
+}
+@media all and (min-width:575px) and (max-width:768px){
+  .container{
+    padding: 15px;
+  }
+  .page-heading{
+    font-size: 32px;
+    line-height: 46px;
+  }
+  label,.form-check-label,.join-text,input,textarea,.attached-file{
+    font-size: 16px;
+    line-height: 23px;
+  }
+  .login_btn{
+    height: 50px;
+    font-size: 18px;
+    line-height: 25px;
+    width: 220px;
+  
+  }
+  .form-control{
+    height: 60px;
+    font-size: 16px;
+    line-height: 23px;
+  }
+
+.card {
+  padding: 14px;
+}
+.submit-btn{
+  text-align: center !important;
+}
+}
+@media only screen and (min-width:768px) and (max-width:992px){
+  label,.form-check-label,.join-text,input,textarea,.attached-file{
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .container{
+    padding: 10px !important;
+  }
+  .page-heading{
+    font-size: 40px;
+    line-height: 62px;
+  }
+  .login_btn{
+    height: 60px;
+    font-size: 18px;
+    line-height: 25px;
+   width: 220px;
+  
+  }
+  .form-control{
+    height: 60px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .submit-btn{
+    text-align: center !important;
+  }
+}
+@media only screen and (min-width:992px) and (max-width:1199px){
+  .login_btn{
+    height: 60px;
+    font-size: 18px;
+    line-height: 25px;
+   width: 220px;
+  
+  }
+}

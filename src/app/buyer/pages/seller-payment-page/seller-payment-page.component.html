@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card p-3 mt-3 ml-3">
+        <div class="form-row">
+          <div class="col">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" class="form-control" placeholder="card number" />
+          </div>
+        </div>
+        <div class="form-row mt-3">
+          <div class="col-8">
+            <label for="cardHolder">Card Holder</label>
+            <input type="text" class="form-control" placeholder="card holder" />
+          </div>
+          <div class="col-2">
+            <label for="expires">Expires</label>
+            <input type="text" class="form-control" placeholder="expiration" />
+          </div>
+          <div class="col-2">
+            <label for="cvv">CVV</label>
+            <input type="text" class="form-control" placeholder="CVV" />
+          </div>
+        </div>
+        <button
+          (click)="proceedTopay()"
+          class="btn custom-btn col-3 form-control mt-3"
+        >
+          Proceed
+        </button>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mt-3 p-3">
+        <p class="mb-3">
+          {{
+            selectedPlan.subscription_plan === "h" ? "Half Yearly" : "Yearly"
+          }}: ${{ selectedPlan.fees }}
+        </p>
+        <p class="mb-3">
+          Discount: {{ couponDiscount ? couponDiscount : "N/A" }}
+        </p>
+        <p class="mb-3">
+          VAT: ({{ vatAmmount }}%)
+          {{ ((selectedPlan.fees - couponDiscount) * vatAmmount) / 100 }}
+        </p>
+        <hr class="mb-3" />
+        <p class="mb-4">
+          Total:
+          {{
+            selectedPlan.fees -
+              couponDiscount +
+              ((selectedPlan.fees - couponDiscount) * vatAmmount) / 100
+          }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

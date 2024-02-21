@@ -1,0 +1,150 @@
+<!--01st april 2021-->
+<section class="payment-history container">
+    <div class="page-heading-holder">
+      <h2 class="page-heading">{{'Seller_Menu.Manage_Quotations'|translate}}</h2>
+      <div class="sort-btn d-inline-block big-view">
+       
+        <span ngbDropdown class="dropping">
+          <button mat-stroked-button class="filter-btn" id="filter" ngbDropdownToggle>{{'Seller_Quotes.Filter_by_Status'|translate}} <mat-icon>
+            expand_more</mat-icon></button>
+            
+        <!--dropdown-->
+        <div id="lang-drop-down" ngbDropdownMenu aria-labelledby="filter">
+          <div ngbDropdownItem (click)="filter_quotations(1)">
+            <span class="lan-title">{{'Buyer_Quotation_History.Initiated'|translate}}</span>
+          </div>
+          <div style="padding: 0 15px">
+            <mat-divider></mat-divider>
+          </div>
+          <div ngbDropdownItem (click)="filter_quotations(2)">
+            <span class="lan-title">{{'Buyer_Quotation_History.Sent'|translate}}</span>
+          </div>
+          <div style="padding: 0 15px">
+            <mat-divider></mat-divider>
+          </div>
+          <div ngbDropdownItem (click)="filter_quotations(3)">
+            <span class="lan-title">{{'Buyer_Quotation_History.Completed'|translate}}</span>
+          </div>
+          <div style="padding: 0 15px">
+            <mat-divider></mat-divider>
+          </div> 
+           <div ngbDropdownItem (click)="filter_quotations(4)">
+            <span class="lan-title">Closed</span>
+          </div>
+        </div>
+      </span>
+      </div>
+    </div>
+    <div class="mobile-button">
+     
+      <span ngbDropdown>
+        <button mat-stroked-button class="filter-btn" id="filter" ngbDropdownToggle>{{'Seller_Quotes.Filter_by_Status'|translate}} <mat-icon>expand_more
+          </mat-icon></button>
+      <!--dropdown-->
+      <div id="lang-drop-down" ngbDropdownMenu aria-labelledby="filter">
+        <div ngbDropdownItem>
+            <span class="lan-title">{{'Buyer_Quotation_History.Initiated'|translate}}</span>
+          </div>
+          <div style="padding: 0 15px">
+            <mat-divider></mat-divider>
+          </div>
+          <div ngbDropdownItem>
+            <span class="lan-title">{{'Buyer_Quotation_History.Sent'|translate}}</span>
+          </div>
+          <div style="padding: 0 15px">
+            <mat-divider></mat-divider>
+          </div>
+          <div ngbDropdownItem>
+            <span class="lan-title">{{'Buyer_Quotation_History.Completed'|translate}}</span>
+          </div>
+          <!-- <div style="padding: 0 15px">
+            <mat-divider></mat-divider>
+          </div> -->
+         <!--  <div ngbDropdownItem>
+            <span class="lan-title">Closed</span>
+          </div> -->
+      </div>
+    </span>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-12 card-header">
+          <div class="row">
+            <div class="col-md-2 name">
+                {{'Seller_Quotes.Quote_Id'|translate}}
+            </div>
+            <div class="col-md-2 name">
+                {{'Buyer_Quotation_History.Date'|translate}}
+            </div>
+            <div class="col-md-2 name">
+                {{'Buyer_Quotation_History.RFQ_ID'|translate}}
+            </div>
+  
+            <div class="col-md-2 name">
+              {{'Buyer_Quotation_History.Status'|translate}}
+            </div>
+            <div class="col-md-2 name">
+              {{'Seller_RFQ.Buyer_Name'|translate}}
+            </div>
+            <div class="col-md-2 name">
+  
+            </div>
+          </div>
+        </div>
+  
+        <mat-divider></mat-divider>
+  
+        <!--cards if valid data-->
+        <div class="col-md-12 cards" *ngIf="filtered_data">
+          <div class="show-values" *ngFor="let item of filtered_data">
+            <div class="row">
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12 value">
+                <span> #{{item.quotation_code}}</span>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12 value">
+                <span><span class="mobile-name">{{'Buyer_Quotation_History.Date'|translate}}:</span> {{item.created_at | date :'mediumDate'}}</span>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12 value">
+                <span><span class="mobile-name">{{'Buyer_Quotation_History.RFQ_ID'|translate}} :</span> #{{item.rfq[0].id }}</span>
+              </div>
+              
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12 value">
+                <span *ngIf="item.status == 1">{{'Buyer_Quotation_History.Initiated'|translate}}</span>
+                <span *ngIf="item.status == 2">{{'Buyer_Quotation_History.Sent'|translate}}</span>
+                <span *ngIf="item.status == 3"> {{'Buyer_Quotation_History.Completed'|translate}}</span>
+                <span *ngIf="item.status == 4"> {{'Seller_Dashboard.Closed'|translate}}</span>
+                <span *ngIf="item.status == null"> - </span>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12 value">
+                <span><span class="mobile-name">{{'Seller_RFQ.Buyer'|translate}} :</span> {{item.buyer.full_name}}</span>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-12 col-12 value mobile-btn">
+                <span class="big-view"><button class="edit-product-btn" mat-button
+                    (click)="openDialog(item);">{{'Buttons.View'|translate}}</button></span>
+                <span class="mobile-name"><button class="edit-product-btn mob" mat-raised-button
+                    (click)="openDialog(item);">{{'Buttons.View'|translate}}</button></span>
+              </div>
+            </div>
+          </div>
+        </div>
+   
+        <!--cards if no data-->
+        <div class="col-md-12" *ngIf="filtered_data">
+          <div class="no-data mt-2"
+            *ngIf="filtered_data == null || filtered_data == undefined || filtered_data?.length == 0">
+            {{'Buyer_Order_History.No_Data'|translate}}
+          </div>
+        </div>
+
+        <!--pagination-->
+        <!-- <div class="col-md-12 col-12 mt-2 pagination-show" *ngIf="filtered_data">
+          <mat-paginator *ngIf="filtered_data?.length >10" [length]="filtered_data.length" [pageSize]="10"
+            [pageSizeOptions]="[5, 10, 15,20]" (page)="getPaginatorData($event)">
+          </mat-paginator>
+        </div> -->
+<!--view more button-->
+
+  
+      </div>
+    </div>
+  </section>

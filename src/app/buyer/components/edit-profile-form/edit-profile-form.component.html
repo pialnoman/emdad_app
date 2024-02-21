@@ -1,0 +1,161 @@
+<div class="card-body">
+  <form>
+    <div class="container-custom d-flex">
+      <div class="user-img-div">
+        <!-- <img class="pro-img" *ngIf="profile_pic === undefined" src="../../../assets/images/avatar.svg" />
+        <img class="pro-img align-self-center" *ngIf="profile_pic" src="{{ profile_pic }}" /> -->
+        <div class="d-inline-block user-img-holder">
+          <img class="img-fluid img-thumbnail" *ngIf="profile_pic === undefined" src="../../../assets/images/avatar.svg" alt="" />
+          <img *ngIf="profile_pic" src="{{profile_pic}}" alt="" />
+        </div>
+        <div class="plus-icon">
+          <i class="fas fa-plus-circle"></i>
+          <input
+            type="file"
+            id="profile_pic"
+            (change)="uploadProfilePic($event)"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-6">
+        <div class="form-group">
+          <label class="form-label">{{'Buyer_Profile_Form.Full_Name' | translate}}</label>
+          <input *ngIf="editUserInfo"
+            name="full_name"
+            [(ngModel)]="editUserInfo.full_name"
+            class="form-control"
+            placeholder="Enter Full Name"
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6">
+        <div class="form-group">
+          <label class="form-label">{{'Buyer_Profile_Form.Comapany_Name' | translate}}</label>
+          <input
+            name="company_name"
+            class="form-control"
+            placeholder="Company Name"
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6">
+        <div class="form-group">
+          <label class="form-label">{{'Buyer_Profile_Form.Email' | translate}}</label>
+          <input
+            name="userMail"
+            [(ngModel)]="userMail"
+            class="form-control"
+            placeholder="Email"
+            type="email"
+            disabled
+          />
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6">
+        <div class="form-group">
+          <label class="form-label">{{'Buyer_Profile_Form.Mobile_Number' | translate}}</label>
+          <input *ngIf="editUserInfo"
+            name="phone"
+            [(ngModel)]="editUserInfo.phone"
+            class="form-control"
+            placeholder="(704) 555-9871"
+            type="number"
+          />
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12">
+        <div class="form-group">
+          <label class="form-label">{{'Buyer_Profile_Form.Address' | translate}}</label>
+          <label for="addressError" *ngIf="addressError" class="errors ml-1">
+            * required</label
+          >
+          <input *ngIf="editUserInfo"
+            name="address"
+            [(ngModel)]="editUserInfo.address"
+            class="form-control"
+            placeholder="357 W. Gray St Utica PennSylvania 57867"
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6">
+        <div class="form-group">
+          <label class="form-label">{{'Buyer_Profile_Form.Country' | translate}}</label>
+          <label for="countryError" *ngIf="countryError" class="errors ml-1">
+            * required</label
+          >
+          <select *ngIf="editUserInfo"
+            class="form-control"
+            name="country"
+            [(ngModel)]="country"
+            (input)="onCountryChange($event.target.value)"
+          >
+            <option value="-1">{{'Buyer_Profile_Form.Select_one' | translate}}</option>
+            <option *ngFor="let country of countries" [value]="country.id">
+              {{ country.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6">
+        <div class="form-group">
+          <label class="form-label">{{'Buyer_Profile_Form.City' | translate}}</label>
+          <label for="cityError" *ngIf="cityError" class="errors ml-1">
+            * required</label
+          >
+          <select *ngIf="editUserInfo"
+            class="form-control"
+            name="city"
+            [(ngModel)]="city"
+          >
+          <option value="-1">{{'Buyer_Profile_Form.Select_one' | translate}}</option>
+            <option *ngFor="let city of editCities" [value]="city.id">
+              {{ city.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6">
+        <div class="form-group">
+          <label class="form-label">{{'Buyer_Profile_Form.Area' | translate}}</label>
+          <input *ngIf="editUserInfo"
+            name="area"
+            class="form-control"
+            [(ngModel)]="editUserInfo.area"
+            placeholder="Pennsylvania"
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6">
+        <div class="form-group">
+          <label class="form-label">{{'Buyer_Profile_Form.Zip_Code' | translate}}</label>
+          <input *ngIf="editUserInfo"
+            name="zip"
+            class="form-control"
+            [(ngModel)]="editUserInfo.zip_code"
+            (keydown.enter)="saveData()"
+            placeholder="57867"
+            type="number"
+          />
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6">
+        <div class="form-group">
+          <button
+            class="btn btn-primary btn-md btn-block login_btn"
+            (keydown.enter)="saveData()"
+            (click)="saveData()"
+          >
+          {{'Buyer_Profile_Form.Save' | translate}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<ngx-spinner></ngx-spinner>

@@ -1,0 +1,542 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;900&display=swap");
+.our-partners{
+  font-family: Jost !important;
+    overflow-x: hidden !important;  
+}
+/*first row styles*/
+.first-row{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+      background: #E5E5E5;
+      padding-bottom: 60px;
+      font-family: Jost !important;
+      
+    }
+    .img-div-top{
+        width:50%;
+     
+    }
+    .text-div{
+     width: 50%;
+    text-align: left;
+   padding-top: 60px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-family: Jost !important;
+    
+    }
+.text-div h1,.head{
+        font-family: Jost;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 52px;
+        text-transform: capitalize;
+        color: #2B2B2B;
+        }
+.about-para{
+        vertical-align: middle;
+        font-family: Jost !important;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 28px;
+        color: #2B2B2B;
+}
+  /* 2nd row and next row styles*/    
+  .second-row{
+    background: #FFFFFF;
+    padding-top: 80px;
+    padding-bottom: 60px;
+    
+
+  }  
+  .subheading{
+    font-family: Jost;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 32px;
+     text-align: center;
+    color: #2B2B2B;
+    padding-bottom: 40px;
+  }
+  .head{
+      text-align: center;
+  }
+  .our-partners-list{
+     
+    
+  }
+  
+  .heading-text{
+      padding-left: 70px;
+      padding-right:70px;
+  }
+  .card-text{
+    font-family: Jost;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+     text-align: center;
+    color: #2B2B2B;
+    padding-bottom: 15px;
+    /* margin-bottom: 10px; */
+    display: inline-block;
+    
+  }
+  .card{
+      text-align: center !important;
+      padding-left: 25px;
+      padding-right: 25px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      background: #FFFFFF;
+-webkit-box-shadow: 0px 9px 25px rgba(0, 0, 0, 0.07);
+        box-shadow: 0px 9px 25px rgba(0, 0, 0, 0.07);
+border-radius: 10px !important;
+border-color: transparent !important;
+-webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+-webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+  }
+  .card-img >img{
+      height: 60px;
+      width: 60px;
+  }
+.custom-row{
+    margin-top: 20px !important;
+}
+/*success stories*/
+.success-stories{
+    background: #E5E5E5;
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+
+.s-head{
+    text-decoration: none;
+    /* border-bottom: 10px solid #E5E5E5; */
+    background-image: url("../../../../assets/success-underline.png");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+   /*  background-origin: padding-box; */
+  height: 80px;
+    
+    
+}
+.image-cont,.slide-text{
+    padding-top: 45px;
+   
+
+}
+.img-thumbnail{
+  height: 80px !important;
+  width:80px !important;
+  background:transparent !important;
+  border:0px transparent;
+}
+.text-head{
+  font-family: Jost;
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 35px;
+color: #2B2B2B;
+}
+.buttons-nav{
+  padding-top: 16px;
+}
+.buttons-nav > .btn{
+  background-color: white !important;
+  border-radius: 5px !important ;
+  text-align: center !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 14px;
+  padding-right: 14px;
+  border:0 !important;
+  outline: 0 !important;
+  color: #2B2B2B;
+  font-weight: 300;
+  
+}
+.btn:focus,.btn.focus{
+  border:0 !important;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+.buttons-nav .btn:active{
+  background-color: #1F4F9E !important;
+  color: white !important;
+  outline: 0;
+  border:0;
+}
+.success-para{
+  font-family: Jost;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 26px;
+color: #2B2B2B;
+}
+.bottom-content{
+  clear: both;
+  
+}
+/* success carousel */
+.success-carousel{
+  background: #E5E5E5;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+}
+
+::ng-deep ngb-carousel .carousel-indicators .active  ::after{
+content: '';
+background-color: #FFFFFF !important;
+
+  
+}
+::ng-deep ngb-carousel .carousel-indicators li {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-indent: 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: white !important;
+  text-align: center !important;
+  font-size: 15px;
+  color: white !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  
+  
+  /* box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5); */    
+}
+::ng-deep ngb-carousel .carousel-indicators{
+  z-index: 1 !important;
+  
+}
+/* ngb-carousel /deep/.carousel-indicators>li> i{
+ align-self: center !important;
+
+ display: inline;
+margin-left: 5px;
+margin-top: 5px; */
+/*   padding-bottom: 10px !important;
+  vertical-align: middle !important;
+} */
+::ng-deep ngb-carousel .carousel-indicators .active {
+  width: 20px;
+  height: 20px;
+  background-color: white  !important;
+  background-image:url('../../../../assets/carousel-fill.png');
+  background-size: 14px;
+  background-repeat: no-repeat;
+background-position-y: center;
+background-position-x: center;
+  
+ 
+}
+::ng-deep ngb-carousel .carousel-inner  img{
+  height: 100% !important;
+}
+
+/*RESPONSIVE -_- */
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1600px !important;
+  }
+}
+@media all and (min-width:290px) and (max-width:600px){
+  .first-row{
+    display: block !important;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
+    padding-bottom: 30px;
+}
+.text-div,.img-div-top{
+  width: 100%;
+  display: block;
+}
+.second-row{
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+.heading-text{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: -10px !important;
+}
+.success-carousel{
+  padding-top: 20px;
+}
+}
+
+@media all and (min-width:290px) and (max-width:430px){
+  ::ng-deep ngb-carousel .carousel-indicators li,::ng-deep ngb-carousel .carousel-indicators .active{
+  height: 13px !important;
+  width: 13px !important;
+  background-size: 8px !important;
+  
+}
+.success-carousel{
+  padding-top: 20px;
+}
+
+}
+@media all and (min-width:430px) and (max-width:992px){
+  ::ng-deep ngb-carousel .carousel-indicators li,::ng-deep ngb-carousel .carousel-indicators .active{
+    height: 13px !important;
+    width: 13px !important;
+    background-size: 10px !important;
+    
+  }
+}
+
+@media all and (min-width:290px) and (max-width:333px){
+  .s-head{
+height: 88px;
+  }
+}
+@media all and (min-width:333px) and (max-width:768px){
+  .s-head{
+    height: 70px;
+    -webkit-height:70px;
+    -moz-height:70px;
+    -o-height:70px
+    
+  }
+}
+@media all and (min-width:290px) and (max-width:768px){
+  .text-div h1,.head{
+
+    font-size: 24px;
+    line-height: 35px;
+    text-transform: capitalize;
+    color: #2B2B2B;
+    }
+    .about-para{
+      vertical-align: middle;
+    
+      font-size: 14px;
+      line-height: 24px;
+      color: #2B2B2B;
+      }
+      .subheading{
+    
+        font-size: 14px;
+        line-height: 24px;
+         text-align: center;
+        color: #2B2B2B;
+        padding-bottom: 10px !important;
+      }
+      .card-text{
+    
+        font-size: 15px;
+        line-height: 20px;
+         text-align: center;
+        color: #2B2B2B;
+        padding-bottom: 15px;
+        /* margin-bottom: 10px; */
+        display: inline-block;
+        
+      }
+      .success-para{
+     
+      font-size: 14px;
+      line-height: 24px;
+      color: #2B2B2B;
+      }
+      .text-head{
+  
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 26px;
+      color: #2B2B2B;
+      }
+      .text-div{
+        padding-top: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      .text-div h1{
+        text-align: center !important;
+      }
+    .about-para{
+        text-align: center;
+      }
+}
+
+
+@media all and (min-width:600px) and (max-width:992px){
+  .first-row{
+    display: block !important;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
+    padding-bottom: 30px;
+}
+.text-div,.img-div-top{
+  width: 100%;
+  display: block;
+}
+.img-div-top img{
+  width: 100% !important;
+}
+.second-row{
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+.heading-text{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: -10px !important;
+}
+.success-carousel{
+  padding-top: 20px;
+}
+.text-div h1{
+  text-align: center !important;
+}
+.about-para{
+  text-align: center;
+}
+}
+@media all and (min-width:992px) and (max-width:1200px){
+  .first-row{
+    display:flex !important;
+    padding-bottom: 10px;
+  }
+  .text-div,.img-div-top{
+    width: 50%;
+    
+}
+.img-div-top img{
+  height: 274px;
+  width: 100%;
+}
+.text-div h1,.about-para{
+text-align: left !important;
+}
+  .text-div h1,.head{
+  
+    font-size: 24px !important;
+line-height: 35px !important;
+    text-transform: capitalize;
+    color: #2B2B2B;
+    }
+    .img-div-top{
+      padding-top: 15px !important;
+      padding-left: 15px !important;
+      padding-bottom: 15px !important;
+      padding-right: 15px !important;
+      text-align: center;
+  }
+   .about-para{
+      vertical-align: middle;
+    
+      font-size: 14px;
+      line-height: 20px;
+      color: #2B2B2B;
+      }
+      .subheading{
+     
+        font-size: 14px;
+        line-height: 20px;
+         text-align: center;
+        color: #2B2B2B;
+        padding-bottom: 15px;
+      }
+      .card-text{
+      
+        font-size: 16px;
+        line-height: 24px;
+         text-align: center;
+        color: #2B2B2B;
+        padding-bottom: 15px;
+        /* margin-bottom: 10px; */
+        display: inline-block;
+        
+      }
+      .success-para{
+    
+        font-size: 14px;
+        line-height: 20px;
+      color: #2B2B2B;
+      }
+      .text-head{
+ 
+      font-size: 18px;
+      line-height: 25px;
+      color: #2B2B2B;
+      }
+      .text-div{
+        padding-top: 20px;
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+      .s-head{
+        height:60px;
+      }
+      ::ng-deep ngb-carousel .carousel-indicators li,::ng-deep ngb-carousel .carousel-indicators .active{
+        height: 13px !important;
+        width: 13px !important;
+        background-size: 10px !important;
+        
+      }
+     
+      
+}
+@media all and (min-width:1399px){
+  .text-div h1,.head{
+    font-size: 36px;
+line-height: 52px;
+  }
+ .about-para{
+    font-size: 18px;
+line-height: 26px;
+  }
+  .subheading{
+    font-size: 18px;
+line-height: 32px;
+  }
+  .text-head{
+    font-size: 24px;
+line-height: 35px;
+  }
+  .success-para{
+    font-size: 18px;
+line-height: 26px;
+  }
+  .card-img img{
+    height: 120px;
+    width: 120px;
+  }
+  
+}

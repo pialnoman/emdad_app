@@ -1,0 +1,347 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;900&display=swap");
+.about-us{
+    background: #E5E5E5;
+    overflow-x: hidden !important;  
+}
+.container-fluid{
+    overflow-x: hidden !important;
+}
+.first-row{
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  font-family: Jost !important;
+  
+}
+.img-div-top{
+    width:50%;
+ 
+}
+.text-div{
+font-family: Jost !important;
+width: 50%;
+text-align: left;
+background: #E5E5E5;
+padding-top: 45px;
+padding-left: 15px;
+padding-right:15px;
+padding-bottom: 15px;
+
+}
+.text-div h1{
+font-family: Jost;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 52px;
+text-transform: capitalize;
+color: #2B2B2B;
+}
+.about-para{
+font-family: Jost;
+vertical-align: middle;
+font-family: Jost;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 28px;
+color: #2B2B2B;
+
+}
+/* vision row styling*/
+.vision-row{
+
+    background: #FFFFFF;
+   
+    padding-top: 100px;
+    padding-bottom: 60px;
+}
+.vision-text{
+    text-align: center !important;
+  
+}
+
+.head{
+font-family: Jost;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 52px;
+text-transform: capitalize;
+color: #2B2B2B;
+text-align: left !important;
+
+}
+::ng-deep.vision-list ol,::ng-deep.vision-list ul{
+font-family: Jost;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 30px;
+color: #2B2B2B;
+
+/* display: block; */
+
+
+}
+
+::ng-deep.vision-list ol li,::ng-deep.vision-list ul li{
+    position:relative;
+    list-style-type: none;
+    text-align: left;
+}
+::ng-deep.vision-list ol li:before,::ng-deep.vision-list ul li:before{
+    content:url('../../../../assets/done-all.png');
+    padding:6px 10px 0 20px;
+    position:absolute;
+    top:0; left:-50px;
+    
+}
+/* 3rd or mission row styling*/
+.mission-row{
+    background:#E5E5E5;
+    padding-top: 100px;
+    padding-bottom:80px;
+   
+}
+
+
+
+/* 4th or values row styling*/
+.value-row{    
+    background-color: #E5E5E5 !important;
+   
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.values-text>.head{
+    text-align: center !important;
+}
+.values-text{
+font-family: Jost;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 32px;
+text-align: center;
+color: #2B2B2B;
+}
+.value-para{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+/* ::ng-deep .ul-list ol li {
+    color: red;
+} */
+
+/* .ul-li ol li{
+    color: red;
+} */
+
+/* RESPONSIVE -_- *_* */
+@media only screen and (min-width: 1200px) {
+    .container {
+      max-width: 1600px !important;
+    }
+  }
+  @media all and (min-width:290px) and (max-width:521px){
+    .img-div-top img{
+        height: 300px !important;
+        width: 100% !important;
+    }
+  }
+  @media all and (min-width:521px) and (max-width:768px){
+.img-div-top img{
+    height: 400px;
+    width: 100%;
+}
+  }
+
+@media all and (min-width:300px) and (max-width:599px){
+    /* first row*/
+.first-row{
+    display: block !important;
+    -ms-flex-wrap: initial;
+        flex-wrap: initial;
+}
+.img-div-top,.text-div{
+    width: 100%;
+    display: block;
+}
+
+.text-div >h1,.head{
+    text-align: center !important;
+    font-size: 28px;
+line-height: 40px;
+}
+
+
+.about-para{
+    text-align: center;
+    font-size: 16px;
+line-height: 20px;
+}
+
+::ng-deep.vision-list ol,::ng-deep.vision-list ul ,.values-text > p{
+    font-size: 16px;
+    line-height: 20px;  
+}
+
+
+
+
+
+}
+
+@media all and (min-width:599px) and (max-width:768px){
+    .first-row{
+        display: block !important;
+        -ms-flex-wrap: none;
+            flex-wrap: none;
+    }
+    .img-div-top,.text-div{
+        width: 100% !important;
+        display: block;
+    }
+    .img-div-top img{
+        width: 100% !important;
+    }
+   
+  
+   
+}
+@media all and (min-width:290px) and (max-width:992px){
+    .vision-row,.mission-row,.value-row{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    } 
+    .head,.text-div h1 {
+        text-align: center !important;
+    }
+    .mission-text >.head{
+        padding-top: 35px;
+    }
+    .value-para{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+   .about-para{
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+ }
+/*990px*/
+@media all and (min-width:768px) and (max-width:992px){
+    .first-row{
+        display: block !important;
+        -ms-flex-wrap: none;
+            flex-wrap: none;
+    }
+    .img-div-top,.text-div{
+        width: 100% !important;
+        display: block;
+    }
+    .img-div-top img{
+        width: 100% !important;
+    }
+  
+ 
+
+}
+@media all and (min-width:992px) and (max-width:1200px){
+    .img-div-top img{
+        height: 274px;
+        width: 100%;
+       
+       
+    }
+ .first-row{
+     display: flex !important;
+ }
+ .img-div-top{
+     padding-top: 15px !important;
+     padding-left: 15px !important;
+     padding-bottom: 15px !important;
+ }
+ .text-div,.img-div-top{
+     width: 50%;
+ }
+    .text-div h1,.head{
+        font-size: 24px;
+        line-height: 35px;
+    }
+    .about-para{
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .text-div{
+        padding-top: 25px;
+        padding-left: 18px;
+    }
+    ::ng-deep.vision-list ol,::ng-deep.vision-list ul,.values-text{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .value-row{
+        padding-top: 70px;
+    }
+}
+/*991px and all */
+/* @media all and (min-width:991px) and (max-width:1099px){
+    .first-row{
+        display: block !important;
+        -ms-flex-wrap: initial;
+            flex-wrap: initial;
+    }
+    .img-div-top,.text-div{
+        width: 100% !important;
+        display: block;
+    }
+    .img-div-top img{
+        width: 100% !important;
+    }
+    .text-div h1{
+        text-align: center !important;
+    }
+  
+}
+@media all and (min-width:1099px) and (max-width:1200px){
+.img-div-top img{
+height:500px;
+}
+.text-div h1,.head{
+    font-size: 36px;
+    line-height: 42px;  
+}
+
+
+} */
+
+@media all and (min-width:1200px) {
+    .img-div-top img{
+        height:500px;
+        }
+        .text-div h1,.head{
+            font-size: 36px;
+            line-height: 46px;  
+        }
+       
+     
+       
+}
+/* @media all and (min-width:1690px){
+
+.img-div-top img{
+    width: 100%;
+}
+} */

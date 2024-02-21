@@ -1,0 +1,16 @@
+<!-- This list shown in the home page with 6 items in a row -->
+<!-- <div class="container"> -->
+<div class="" *ngIf="products">
+  <div *ngIf="view_style==='grid'" class="row">
+    <div [ngClass]="{'col-lg-3':prodInRow6, 'col-lg-4':!prodInRow6, 'col-xl-3':prodInRow6, 'col-xl-4':!prodInRow6}" *ngFor="let product of products" class="col-6 col-sm-4 col-md-3 mb-3">
+      <app-product-card [product]="product"></app-product-card>
+    </div>
+  </div>
+  <div *ngIf="view_style==='list'">
+    <div *ngFor="let product of products">
+      <app-product-card-horizonal [product]="product"></app-product-card-horizonal>
+    </div>
+  </div>
+</div>
+
+<!-- </div> -->

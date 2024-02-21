@@ -1,0 +1,253 @@
+<section>
+    <h2 class="page-heading">{{'Seller_Upload_Product.title'|translate}}</h2>
+</section>
+<section class="card mb-5">
+    <form [formGroup]="productUploadForm" (ngSubmit)="onSubmit(productUploadForm.value)">
+        <div class="row">
+            <div class="col-md-4 col-lg-4 col-12">
+                <div class="form-group">
+                    <select class="form-control form-control-lg" #catId (change)="setSubCAt(catId.value)"
+                        formControlName="category">
+                        <option value="" disabled selected>{{'Seller_Upload_Product.Select_Category'|translate}}</option>
+                        <option value="{{cat.id}}" *ngFor="let cat of categories">{{cat.name}}</option>
+                    </select>
+                    <div *ngIf="category.invalid && (category.dirty || category.touched)">
+                        <div *ngIf="category.errors?.required">
+                            <app-form-input-alert [alertMsg]="'Category is required.'"></app-form-input-alert>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 col-12">
+                <div class="form-group">
+                    <select class="form-control form-control-lg" #subCatId (change)="setChildCAt(subCatId.value)"
+                        formControlName="subCategory">
+                        <option value="" disabled selected>{{'Seller_Upload_Product.Select_Sub_Category'|translate}}</option>
+                        <option value="{{subCat.id}}" *ngFor="let subCat of subCategories">{{subCat.name}}</option>
+                    </select>
+                    <div *ngIf="subCategory.invalid && (subCategory.dirty || subCategory.touched)">
+                        <div *ngIf="subCategory.errors?.required">
+                            <app-form-input-alert [alertMsg]="'Sub-category is required.'"></app-form-input-alert>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 col-12">
+                <div class="form-group">
+                    <select class="form-control form-control-lg" formControlName="childCategory">
+                        <option value="" disabled selected>{{'Seller_Upload_Product.Select_Child_Category'|translate}}</option>
+                        <option value="{{child.id}}" *ngFor="let child of childCategories">{{child.name}}</option>
+                    </select>
+                    <div *ngIf="childCategory.invalid && (childCategory.dirty || childCategory.touched)">
+                        <div *ngIf="childCategory.errors?.required">
+                            <app-form-input-alert [alertMsg]="'Child category is required.'"></app-form-input-alert>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="prodName">{{'Seller_Product_Categories.Product_Name'|translate}}</label>
+                    <!-- prodName -->
+                    <input id="prodName" class="form-control form-control-md" type="text" formControlName="prodName"
+                        placeholder="{{'Seller_Product_Categories.Product_Name'|translate}}" />
+                    <div *ngIf="prodName.invalid && (prodName.dirty || prodName.touched)">
+                        <div *ngIf="prodName.errors?.required">
+                            <app-form-input-alert [alertMsg]="'Product name is required.'"></app-form-input-alert>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="prodDetails">{{'Seller_Upload_Product.Product_Details'|translate}}</label>
+                    <div class="input-group">
+                        <!-- prodDetails -->
+                        <textarea rows="15" id="prodDetails" class="form-control form-control-md" type="text"
+                            formControlName="prodDetails" placeholder="{{'Seller_Upload_Product.Product_Details'|translate}}"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="form-group">
+                    <label for="manufactererName">{{'Seller_Upload_Product.Manufacturer_Name'|translate}}</label>
+                    <!-- manufactererName -->
+                    <select class="form-control form-control-lg" formControlName="manufactererName" (change)="addNewBrand(manufactererName.value)">
+                        <option value="" disabled selected>{{'Seller_Upload_Product.Manufacturer_Name'|translate}}</option>
+                        <option value="{{brand.id}}" [selected]="currentAddedBrand == brand.id" *ngFor="let brand of brandList">{{brand.name | titlecase}}</option>
+                        <option value="new">Others</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="form-group">
+                    <label for="prodStock">{{'Seller_Upload_Product.Product_Stock'|translate}}</label>
+                    <!-- prodStock -->
+                    <input id="prodStock" class="form-control form-control-md" type="number" min="1"
+                        formControlName="prodStock" />
+                    <div *ngIf="prodStock.invalid && (prodStock.dirty || prodStock.touched)">
+                        <div *ngIf="prodStock.errors?.required">
+                            <app-form-input-alert [alertMsg]="'Product stock name is required.'"></app-form-input-alert>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="form-group">
+                    <label for="prodSize">{{'Seller_Upload_Product.prod_size'|translate}}</label>
+                    <!-- Size-->
+                    <input placeholder="10" id="prodSize" class="form-control form-control-md" type="text" formControlName="prodSize" />
+                    <!-- Color -->
+                    <!-- <select class="form-control form-control-lg" formControlName="prodSize" (change)="addNewSize(prodSize.value)">
+                        <option value="" disabled selected>{{'Seller_Upload_Product.prod_color'|translate}}</option>
+                        <option value="{{color.id}}" [selected]="currentAddedColor == color.id" *ngFor="let size of sizeList">{{color.name | titlecase}}</option>
+                        <option value="new">Others</option>
+                    </select> -->
+                </div>
+            </div>
+            <!-- <div class="col-md-6 col-12">
+                <div class="form-group">
+                    <label for="prodSize">{{'Seller_Upload_Product.Size'|translate}}</label> -->
+                    <!-- prodSize -->
+                    <!-- <input id="prodSize" class="form-control form-control-md" type="text" formControlName="prodSize"
+                        placeholder="10" />
+                </div>
+            </div> -->
+            <div class="col-md-6 col-12">
+                <div class="form-group">
+                    <label for="prodUnit">{{'Seller_Product_Categories.Unit_of_measurement'|translate}}</label>
+                    <select class="form-control form-control-lg" formControlName="prodUnit" (change)="addNewUnit(prodUnit.value)">
+                        <option value="" disabled selected>{{'Seller_Product_Categories.Unit_of_measurement'|translate}}</option>
+                        <option value="{{unit.id}}" [selected]="currentAddedUnit == unit.id" *ngFor="let unit of unitList">{{unit.name | titlecase}}</option>
+                        <option value="new">Others</option>
+                    </select>
+                    <!-- <div *ngIf="prodUnit.invalid && (prodUnit.dirty || prodUnit.touched)">
+                        <div *ngIf="prodUnit.errors?.required">
+                            <app-form-input-alert [alertMsg]="'Product unit is required.'"></app-form-input-alert>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="form-group">
+                    <label for="prodDeliMethod">{{'Seller_Upload_Product.Product_Delivery_Method'|translate}}</label>
+                    <select (change)="change_placeholder($event.target.value)" class="form-control form-control-lg" formControlName="prodDeliMethod"
+                        [(ngModel)]="selectedOption">
+                        <option value="-1" disabled selected>{{'Seller_Upload_Product.Product_Delivery_Method'|translate}}</option>
+                        <option value="1">{{'Seller_Product_Categories.DDP'|translate}}</option>
+                        <option value="2">{{'Seller_Product_Categories.ExWorks'|translate}}</option>
+                    </select>
+                    <div *ngIf="prodDeliMethod.invalid && (prodDeliMethod.dirty || prodDeliMethod.touched)">
+                        <div *ngIf="prodDeliMethod.errors?.required">
+                            <app-form-input-alert [alertMsg]="'Product unit is required.'"></app-form-input-alert>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="form-group">
+                    <label for="leadTime">{{'Seller_Upload_Product.Set_Lead_Time'|translate}}</label>
+                    <!-- leadTime -->
+                    <input id="leadTime" class="form-control form-control-md" type="number" min="0" formControlName="leadTime"
+                        placeholder="{{'Seller_Upload_Product.Ex_Works_20_days' | translate}}" />
+                    <div *ngIf="leadTime.invalid && (leadTime.dirty || leadTime.touched)">
+                        <div *ngIf="leadTime.errors?.required">
+                            <app-form-input-alert [alertMsg]="'Lead time is required.'"></app-form-input-alert>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12" *ngIf="selectedOption == '2'">
+                <div class="form-group">
+                    <label for="shopPick">{{'Seller_Upload_Product.Shop_Pick_Up_Location'|translate}}</label>
+                    <!--shopPick -->
+                    <input id="shopPick" class="form-control form-control-md" type="text" formControlName="shopPick" />
+                    <div *ngIf="shopPick.invalid && (shopPick.dirty || shopPick.touched)">
+                        <div *ngIf="shopPick.errors?.required">
+                            <app-form-input-alert [alertMsg]="'Shop pick up location is required.'">
+                            </app-form-input-alert>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12" *ngIf="selectedOption == '1'">
+                <div class="form-group">
+                    <label for="shopPick">{{'Seller_Upload_Product.ddp_destination'|translate}}</label>
+                    <!--shopPick -->
+                    <input id="ddp_destination" class="form-control form-control-md" type="text" formControlName="ddp_destination" />
+                    <div *ngIf="ddp_destination.invalid && (ddp_destination.dirty || ddp_destination.touched)">
+                        <div *ngIf="ddp_destination.errors?.length>0">
+                            <app-form-input-alert [alertMsg]="'Invalid DDP destination'">
+                            </app-form-input-alert>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-md-6 col-12" *ngIf="selectedOption == '1'">
+                <div class="form-group">
+                    <label for="ddp">{{'Seller_Upload_Product.DDP_Destination'|translate}}</label> -->
+                    <!-- ddp -->
+                    <!-- <input id="ddp" class="form-control form-control-md" type="text" formControlName="ddp" />
+                    <div *ngIf="ddp.invalid && (ddp.dirty || ddp.touched)">
+                        <div *ngIf="ddp.errors?.required">
+                            <app-form-input-alert [alertMsg]="'DDP Destination is required.'"></app-form-input-alert>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-md-6 col-12">
+                <div class="form-group">
+                    <label for="prodPrice">{{'Seller_Upload_Product.Product_Unit_Price'|translate}}{{'Seller_Upload_Product.VatEx'|translate}}</label>
+                    <!-- prodPrice -->
+                    <input id="prodPrice" class="form-control form-control-md" type="number" formControlName="prodPrice"
+                        placeholder="{{'Seller_Upload_Product.Product_Unit_Price'|translate}}" />
+                    <div *ngIf="prodPrice.invalid && (prodPrice.dirty || prodPrice.touched)">
+                        <div *ngIf="prodPrice.errors?.required">
+                            <app-form-input-alert [alertMsg]="'Product Unit Price is required.'"></app-form-input-alert>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="form-group">
+                    <label class="d-block">{{'Seller_Upload_Product.Product_Image'|translate}} <small>({{'Seller_Upload_Product.Image_Upload_Instruction'|translate}})</small></label>
+                    <!-- <ul class="attached-file"> -->
+                    <div *ngFor="let img of imgPreviewList; let i = index;" class="d-inline-block img-preview-div">
+                        <img [src]="img" alt="" width="80" height="80">
+                        <button mat-raised-button (click)="removeImg(i);"><img src="../../../../assets/close.svg"
+                                alt=""></button>
+                    </div>
+                    <!-- </ul> -->
+                    <label for="prodImage" class="custom-file-upload" *ngIf="imgPreviewList.length < 2">
+                        <input id="prodImage" class="form-control form-control-md" type="file"
+                            formControlName="prodImage" (change)="handleImgSelect($event);" accept="image/*" />
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="form-group">
+                    <label class="d-block">{{'Seller_Upload_Product.Product_Attachments'|translate}}</label>
+                    <label for="attachments" class="custom-file-upload mr-3" *ngIf="selectedFiles.length < 3">
+                        <input id="attachments" class="form-control form-control-md" type="file" accept="image/*,.pdf,.doc,.docx"
+                            formControlName="attachments" (change)="handleFileSelect($event);" />
+                    </label>
+                    <ul class="attached-file pl-0">
+                        <li *ngFor="let file of selectedFiles; let i = index;">
+                            {{file.name}}
+                            <button mat-raised-button (click)="removeFile(i);"><img src="../../../../assets/close.svg"
+                                    alt=""></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group submit-btn">
+                    <button type="submit" mat-raised-button class="btn btn-primary btn-md btn-block login_btn"
+                        [disabled]="productUploadForm.invalid">
+                        {{'Buttons.Save'|translate}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

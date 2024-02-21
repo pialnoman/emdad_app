@@ -1,0 +1,527 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button:focus {
+  outline: none;
+}
+.banner {
+  color: #fff;
+  /* text-shadow: 0 0 5px rgba(0, 0, 0, 0.9); */
+  position: relative;
+  height: 450px;
+  text-align: center;
+  background: rgb(247, 65, 135);
+  background: url("../../../../assets/Rectangle-16.png") no-repeat;
+  background-size: cover;
+}
+.banner img {
+  width: 100%;
+  height: 100%;
+}
+
+.banner .search-holder {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 9;
+}
+
+.search-holder h2 {
+  font-size: 36px;
+}
+
+.categories {
+  min-height: 88px;
+  background-color: #fff;
+  padding: 0;
+  position: relative;
+}
+
+.categories .col-md-2 {
+  padding: 0;
+}
+
+.single-category {
+  padding: 20px 15px;
+  background: unset;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  background: #fff;
+  height: 88px;
+}
+
+.single-category.active {
+  background: #fafafa;
+}
+
+.single-category:hover {
+  background: #fafafa;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.cat-icon-holder {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #1f4f9e;
+  /* padding: 20px; */
+  display: -webkit-box;
+  margin-right: 10px;
+  vertical-align: top;
+  position: relative;
+  float: left;
+}
+
+.cat-title {
+  display: -webkit-box;
+  width: calc(100% - 60px);
+  text-transform: capitalize;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  float: left;
+  /* margin-top: 12px; */
+  -webkit-box-orient: vertical;
+}
+
+.subCategory {
+  width: 100%;
+  height: 300px;
+  overflow-y: auto;
+  position: absolute;
+  top: 120px;
+  left: 0;
+  background: #fafafa;
+  z-index: 9;
+  padding: 40px 0;
+  -webkit-box-shadow: 0 30px 30px rgb(0 0 0 / 10%);
+          box-shadow: 0 30px 30px rgb(0 0 0 / 10%);
+}
+
+.subCatItem,
+.children {
+  margin-bottom: 35px;
+  text-transform: capitalize;
+}
+
+.subCatItem span,
+.children span {
+  margin-left: 15px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  padding-bottom: 10px;
+}
+
+.subCatItem span:hover,
+.children span:hover {
+  cursor: pointer;
+  /* border-bottom: 1px solid #f49814; */
+  border-bottom: 1px solid #1f4f9e;
+  /* color: #f49814; */
+  color: #1f4f9e;
+  font-weight: 500;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.subCatItem span.active,
+.children span.active {
+  /* border-bottom: 1px solid #f49814; */
+  border-bottom: 1px solid #1f4f9e;
+  padding-bottom: 10px;
+  /* color: #f49814; */
+  color: #1f4f9e;
+}
+
+.product-list-header {
+  padding: 80px 0 36px;
+  font-family: Jost;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  color: #2b2b2b;
+}
+
+.cat-round-bg {
+  width: 160px;
+  height: 160px;
+  /* border-radius: 50%; */
+  background: #fff;
+  border-radius: 150px;
+  text-align: center;
+  padding: 25px;
+  margin: auto;
+  color: #2b2b2b;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.cat-round-bg:hover {
+  background: #1f4f9e;
+  color: #fff;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.cat-round-bg img {
+  margin: auto;
+  color: #fff;
+  /* background: #FFFFFF; */
+}
+
+.cat-round-bg img:nth-child(1) {
+  display: none;
+}
+
+.cat-round-bg img:nth-child(2) {
+  display: block;
+}
+
+.cat-round-bg:hover img:nth-child(1) {
+  display: block;
+}
+
+.cat-round-bg:hover img:nth-child(2) {
+  display: none;
+}
+
+.view-more-btn-div {
+  text-align: center;
+  padding: 60px 0 90px;
+}
+
+.view-more-btn-div button {
+  /* background: #f49814; */
+  background: #1f4f9e;
+  color: #fff;
+  padding: 12px 35px;
+  font-family: Jost;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.send-suggestion-div {
+  padding: 55px 100px;
+  background: #ddd;
+  color: #2b2b2b;
+  font-family: Jost;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+}
+.send-suggestion-div button {
+  background: #2b2b2b;
+  color: #fff;
+  padding: 17px 55px;
+  border-radius: 35px;
+  font-size: 24px;
+  font-weight: 500;
+  vertical-align: bottom;
+}
+
+.cat-icon-holder img {
+  height: 22px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/* @media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1600px !important;
+  }
+} */
+
+@media only screen and (max-width: 992px) {
+  .d-sx-none {
+    display: none;
+  }
+  .search-holder h2 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .product-list-header {
+    padding: 30px 0 0;
+    font-size: 20px;
+  }
+  .cat-round-bg {
+    width: 100px;
+    height: 100px;
+    padding: 30px;
+  }
+  .cat-round-bg img {
+    height: 40px;
+  }
+  .popular-cat-div-sm {
+    margin-bottom: 15px;
+  }
+  .popular-cat-sm {
+    margin: 10px 0 20px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .product-list-header {
+    padding-bottom: 0 !important;
+  }
+  .view-more-btn-div {
+    padding: 30px 0 30px;
+  }
+  .view-more-btn-div button {
+    height: 40px;
+    font-size: 16px;
+    padding: 4px 35px;
+  }
+  app-search-for ::ng-deep .ng-autocomplete .autocomplete-container {
+    width: 200px;
+    height: 60px;
+  }
+  app-search-for ::ng-deep .ng-autocomplete .autocomplete-container .input-container input {
+    width: 200px;
+    height: 60px;
+    font-size: 16px;
+  }
+  app-search-for ::ng-deep .ng-autocomplete {
+    width: 200px;
+    height: 60px;
+  }
+  app-search-for ::ng-deep button {
+    height: 60px;
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 450px) {
+  .banner {
+    height: 160px !important;
+  }
+  .banner .search-holder {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 451px) and (max-width: 767px) {
+  .banner {
+    height: 200px !important;
+  }
+  .banner .search-holder {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .banner {
+    height: 220px !important;
+  }
+  .banner .search-holder {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .single-category {
+    height: 85px;
+  }
+  .banner {
+    height: 300px !important;
+  }
+  .banner .search-holder {
+    width: 50%;
+  }
+  .search-holder h2 {
+    font-style: normal;
+    font-weight: 500;
+    /* font-size: 30px; */
+    font-size: 32px;
+line-height: 46px;
+  }
+  .product-list-header {
+    padding: 30px 0 0;
+    font-size: 24px;
+  }
+  .cat-round-bg {
+    width: 124px;
+    height: 124px;
+    padding: 30px;
+}
+  .cat-round-bg img {
+    height: 40px;
+  }
+  .cat-icon-holder {
+    width: 45px;
+    height: 45px;
+    padding: 4px 0;
+    text-align: center;
+  }
+  .categories {
+    min-height: 85px;
+  }
+  .subCategory {
+    height: 220px;
+    top: 85px;
+    padding: 15px 0;
+    overflow-y: auto;
+  }
+  .subCatItem,
+  .children {
+    margin-bottom: 15px;
+  }
+  .subCatItem span,
+  .children span {
+    font-size: 16px;
+  }
+  .cat-icon-holder img {
+    height: 20px;
+  }
+  .cat-title {
+    width: calc(100% - 55px);
+    font-size: 16px;
+    margin-top: 0px;
+    overflow-wrap: break-word;
+  }
+  .product-list-header {
+    padding-bottom: 35px !important;
+    font-size: 32px;
+line-height: 46px;
+  }
+  .list-show{
+    padding-top: 40px !important;
+  }
+  .view-more-btn-div {
+    padding: 30px 0 30px;
+  }
+
+  app-search-for ::ng-deep .ng-autocomplete .autocomplete-container {
+    width: 380px;
+  }
+  app-search-for ::ng-deep .ng-autocomplete .autocomplete-container .input-container input {
+    width: 380px;
+  }
+  app-search-for ::ng-deep .ng-autocomplete {
+    width: 380px;
+  }
+  app-search-for ::ng-deep button {
+    height: 90px;
+  }
+  .cat-lg{
+    font-size: 14px;
+line-height: 20px;
+  }
+  .recent-prods{
+    padding-bottom: 45px !important;
+  }
+  .view-more-btn-div button {
+    font-size: 16px;
+line-height: 23px;
+height: 48px;
+padding: 0 35px;
+  }
+  .view-more-btn-div button img{
+    height: 5px;
+  }
+  .no-prod{
+font-size: 16px;
+line-height: 23px;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .cat-round-bg {
+    width: 150px;
+    height: 150px;
+    padding: 30px;
+  }
+  .single-category {
+    height: 85px;
+  }
+  .cat-icon-holder {
+    width: 45px;
+    height: 45px;
+    padding: 4px 0;
+    text-align: center;
+  }
+  .categories {
+    min-height: 85px;
+  }
+  .subCategory {
+    height: 220px;
+    top: 85px;
+    padding: 15px 0;
+    overflow-y: auto;
+  }
+  .subCatItem,
+  .children {
+    margin-bottom: 15px;
+  }
+  .subCatItem span,
+  .children span {
+    font-size: 16px;
+  }
+  .cat-icon-holder img {
+    height: 20px;
+  }
+  .cat-title {
+    width: calc(100% - 55px);
+    font-size: 16px;
+    margin-top: 0px;
+  }
+  app-search-for ::ng-deep .ng-autocomplete .autocomplete-container {
+    width: 380px;
+  }
+  app-search-for ::ng-deep .ng-autocomplete .autocomplete-container .input-container input {
+    width: 380px;
+  }
+  app-search-for ::ng-deep .ng-autocomplete {
+    width: 380px;
+  }
+  /* app-search-for ::ng-deep button {
+    height: 90px;
+  } */
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1500px) {
+  app-search-for ::ng-deep .ng-autocomplete .autocomplete-container {
+    width: 380px;
+  }
+  app-search-for ::ng-deep .ng-autocomplete .autocomplete-container .input-container input {
+    width: 380px;
+  }
+  app-search-for ::ng-deep .ng-autocomplete {
+    width: 380px;
+  }
+  /* app-search-for ::ng-deep button {
+    height: 90px;
+  } */
+}

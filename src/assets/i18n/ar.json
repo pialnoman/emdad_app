@@ -1,0 +1,461 @@
+{
+  "Buttons": {
+    "Save": "يحفظ",
+    "View": "منظر"
+  },
+  "Nav": {
+    "Home": "الصفحة الرئيسية",
+    "About_Us": "من نحن",
+    "Categories": "الفئات",
+    "Our_Partners": "شركائنا",
+    "Contact_Us": "اتصل بنا",
+    "Sell_On_Emdad": "البيع على Emdad",
+    "Sign_In": "تسجيل الدخول",
+    "Sign_Up": "الاشتراك",
+    "Change_Language": "تغيير اللغة",
+    "Cart": "عربة التسوق",
+    "Notifications": "إشعارات",
+    "Profile_Settings": "إعدادات الملف الشخصي",
+    "Change_Password": "تغيير كلمة المرور",
+    "Order_History": "تاريخ الطلب",
+    "Manage_Quotation": "إدارة الاقتباس",
+    "Update": "تحديث"
+  },
+  "Header_DropDowns": {
+    "My_Profile": "ملفي الشخصي",
+    "Track_Orders": "تتبع الطلبات",
+    "My_Wishlist": "قائمة أمنياتي",
+    "Raise_a_support": "رفع تذكرة دعم",
+    "Log_Out": "تسجيل خروج",
+    "Quotations": "الاقتباسات"
+  },
+  "Banner": {
+    "Search": "البحث عن المنتجات",
+    "All_Cat": "جميع الفئات"
+  },
+  "Home": {
+    "Popular_Products": "المنتجات الشعبية",
+    "Popular_Categories": "الفئات الشائعة",
+    "Recent_Products": "المنتجات الحديثة",
+    "View_More": "عرض المزيد",
+    "No_Product": "لا يوجد المزيد من المنتجات للعرض",
+    "No_Item": "لا يوجد عنصر للعرض",
+    "Brands": "الشركات المصنعة",
+    "Colors": "الألوان",
+    "Price": "السعر",
+    "Search_Result": "نتيجة البحث",
+    "Items": "الفئات الشائعة",
+    "Clear": "امسح الكل",
+    "Verify_pay":"التحقق من الدفع"
+  },
+  "Buyer_Profile": {
+    "Header": "ملفي"
+  },
+  "Buyer_Profile_Form": {
+    "Full_Name": "الاسم الكامل",
+    "Comapany_Name": "اسم الشركة (اختياري)",
+    "Email": "البريد الإلكتروني",
+    "Mobile_Number": "رقم الهاتف المحمول",
+    "Address": "العنوان",
+    "Country": "البلد",
+    "Select_one": "حدد واحدًا",
+    "City": "المدينة",
+    "Area": "المنطقة",
+    "Zip_Code": "الرمز البريدي",
+    "Save": "حفظ"
+  },
+  "Buyer_Change_Password_Form": {
+    "Current_Password": "كلمة السر الحالية",
+    "New_Password": "كلمة السر الجديدة",
+    "Confirm_Password": "تأكيد كلمة المرور"
+  },
+  "Buyer_Order_History": {
+    "Order_ID": "معرف الطلب",
+    "Payment_Date": "تاريخ الدفع",
+    "Delivery_Date": "تاريخ التسليم",
+    "Amount": "المبلغ",
+    "View": "عرض",
+    "No_Data": "لا توجد بيانات متاحة"
+  },
+  "Buyer_Quotation_History": {
+    "Quotation_ID": "معرف عرض الأسعار",
+    "Date": "التاريخ",
+    "RFQ_ID": "معرف طلب عرض الأسعار",
+    "Seller_Name": "اسم البائع",
+    "Status": "الحالة",
+    "Initiated": "تم البدء",
+    "Sent": "تم الإرسال",
+    "Quotation_Received":"تم استلام الاقتباس",
+    "Completed": "مكتمل",
+    "Closed": "مغلق",
+    "Qunatity": "كمية",
+    "Unit_Price": "سعر الوحده",
+    "Total_Price": "سعر توتا",
+    "Message": "رسالة",
+    "Attachments": "المرفقات",
+    "Comment": "تعليق",
+    "reason_denial": "أضف سببًا للرفض",
+    "Accept": "قبول",
+    "Deny": "أنكر",
+    "Checkout":"الدفع"
+  },
+  "Footer": {
+    "Slogan": "شعارك هنا",
+    "Company": "الشركة",
+    "About_Us": "عنا",
+    "Our_Partners": "شركاؤنا",
+    "Sell_On_Emdad": "بيع على إمداد",
+    "Help": "يساعد",
+    "Contact": "اتصل",
+    "Privacy_Policy": "سياسة خاصة",
+    "Terms": "الأحكام والشروط",
+    "Send_Suggestion": "إرسال اقتراح منتج إلى EMDAD"
+  },
+  "Seller_Profile": {
+    "Company_Profile": "الملف التعريفي للشركة",
+    "Company_Name": "اسم الشركة",
+    "Attachments": "المرفقات",
+    "Seller_Description": "وصف البائع",
+    "Zip_Code": "الرمز البريدي",
+    "Area": "المنطقة",
+    "Select_City": "حدد المدينة",
+    "Select_Country": "حدد البلد",
+    "City": "المدينة",
+    "Country": "البلد",
+    "Company_Address": "اسم الشركة",
+    "Company_Mobile_Number": "اسم الشركة",
+    "Company_Email": "اسم الشركة",
+    "Max_Two": "(اسم الشركة)"
+  },
+  "Seller_Menu": {
+    "Dashboard": "لوحة التحكم",
+    "Manage_Profile": "إدارة الملف الشخصي",
+    "Company_Profile": "الملف التعريفي للشركة",
+    "Bank_Account_Information": "معلومات الحساب المصرفي",
+    "Change_Password": "تغيير كلمة المرور",
+    "Manage_Subscription": "إدارة الاشتراك",
+    "Subscription_Plan": "خطة الاشتراك",
+    "Payment_History": "سجل الدفع",
+    "Manage_Products": "إدارة المنتجات",
+    "Product_Categories": "فئات المنتجات",
+    "Bulk_Products_Import": "إدارة الملف الشخصي",
+    "Upload_Products": "إدارة الملف الشخصي",
+    "Manage_RFQs": "إدارة الملف الشخصي",
+    "Manage_Quotations": "إدارة الملف الشخصي",
+    "Manage_Orders": "إدارة الملف الشخصي",
+    "Current_Orders": "إدارة الملف الشخصي",
+    "Order_History": "إدارة الملف الشخصي",
+    "Invoices": "إدارة الملف الشخصي",
+    "Support": "إدارة الملف الشخصي"
+  },
+  "Seller_Dashboard": {
+    "Quick_View": "عرض سريع",
+    "rfq_id": "معرّف RFQ",
+    "date": "التاريخ",
+    "status": "الحالة",
+    "Quotations_List": "قائمة عروض الأسعار",
+    "Quotation_ID": "معرّف عرض الأسعار",
+    "Sent": "تم الإرسال",
+    "Waiting": "قيد الانتظار",
+    "Completed": "مكتمل",
+    "Order_ID": "معرّف الطلب",
+    "Payment_Date": "تاريخ الدفع",
+    "Delivery_Date": "تاريخ التسليم او الوصول",
+    "Amount": "كمية",
+    "Recieved": "تم الاستلام",
+    "Delivered": "تم التوصيل",
+    "Processing": "معالجة"
+  },
+  "Seller_Bank_Info": {
+    "title": "معلومات الحساب المصرفي",
+    "Number": "رقم الحساب المصرفي",
+    "Account_Letter": "خطاب حساب مختوم",
+    "Bank_Name": "اسم البنك",
+    "Swift_Code": "رمز السرعة",
+    "Account_Name": "أسم الحساب",
+    "Bank_Address": "عنوان البنك",
+    "isInfo": "يسمح بحد أقصى ملف واحد. يمكنك تحميل أو استبدال ملف جديد عن طريق إزالة الملف الحالي"
+  },
+  "Seller_Subscription": {
+    "title": "اختر خطة الاشتراك",
+    "Half_Yearly": "نصف سنوي",
+    "Yearly": "سنوي",
+    "VAT": "شامل لضريبة القيمة المضافة",
+    "Discount": "الخصم ريال سعودي",
+    "Proceed": "متابعة الدفع",
+    "Apply": "تطبيق",
+    "Coupon_Text": "أدخل قسيمة الخصم",
+    "Plan_Name": "اسم خطة الاشتراك",
+    "Expired_Date": "تاريخ انتهاء الصلاحية"
+  },
+  "Seller_Product_Categories": {
+    "title": "فئات المنتجات",
+    "Product_Name": "اسم المنتج",
+    "Bulk_Delete": "الحذف بالجملة",
+    "Delivery_Method": "طريقة التسليم",
+    "Stock": "المخزون",
+    "Unit_Price": "سعر الوحدة",
+    "Unit_of_measurement": "وحدة القياس",
+    "DDP": "DDP",
+    "ExWorks": "الأعمال السابقة",
+    "Days": "أيام"
+  },
+  "Seller_Bulk_Upload_Product": {
+    "title": "منتج التحميل المجمع",
+    "Info_Text": "يجب تحديد فئة فرعية قبل تحميل المنتجات بالجملة. إليك نموذج ملف يوضح كيفية التحميل المجمع!",
+    "Download": "تنزيل نموذج ملف",
+    "Next": "التالي",
+    "placeholder_text1": "إفلات لإرفاق ملف أو الاختيار من الباحث",
+    "placeholder_text2": "يجب أن يكون بتنسيق (.xls).",
+    "waiting_text1": "يرجى التحلي بالصبر حتى المنتج ",
+    "waiting_text2": "تم الرفع بنجاح.",
+    "instruction1": "الرجاء تحميل دليل ملف",
+    "instruction2": "تم الرفع بنجاح.",
+    "instruction3": "الرجاء تحميل دليل ملف",
+    "instruction4": "لجميع منتجاتك",
+    "success_text": "يجب تحديد فئة فرعية قبل تحميل المنتجات بالجملة. إليك نموذج ملف يوضح كيفية التحميل المجمع!",
+    "Finish": "يجب تحديد فئة فرعية قبل تحميل المنتجات بالجملة. إليك نموذج ملف يوضح كيفية التحميل المجمع!",
+    "Submit": "يجب تحديد فئة فرعية قبل تحميل المنتجات بالجملة. إليك نموذج ملف يوضح كيفية التحميل المجمع!"
+  },
+  "Seller_Upload_Product": {
+    "title": "تحميل المنتج",
+    "Product_Delivery_Method": "طريقة تسليم المنتج",
+    "Set_Lead_Time": "تعيين مهلة زمنية",
+    "Product_Unit_Price": "سعر وحدة المنتج",
+    "VatEx": "(غير شامل لضريبة القيمة المضافة)",
+    "Image_Upload_Instruction": "حد أقصى. يمكن تحميل صورتين",
+    "Product_Attachments": "مرفقات المنتج",
+    "Select_Category": "حدد الفئة",
+    "Ex_Works_20_days": "العمل لمدة 20 يومًا",
+    "Select_Sub_Category": "حدد الفئة الفرعية",
+    "Select_Child_Category": "حدد الفئة الفرعية",
+    "Product_Details": "طريقة تسليم المنتج",
+    "Manufacturer_Name": "طريقة تسليم المنتج",
+    "prod_size": "حجم المنتج",
+    "Product_Stock": "طريقة تسليم المنتج",
+    "Size": "طريقة تسليم المنتج",
+    "Shop_Pick_Up_Location": "طريقة تسليم المنتج",
+    "DDP_Destination": "طريقة تسليم المنتج",
+    "Product_Image": "طريقة تسليم المنتج"
+  },
+  "Seller_RFQ": {
+    "title": "إدارة طلبات عروض الأسعار",
+    "Sort": "فرز حسب التاريخ",
+    "Buyer_Name": "اسم المشتري",
+    "Created": "تم الإنشاء",
+    "Buyer": "المشتري",
+    "Make_Quote": "تقديم عرض أسعار",
+    "Product_Quantity": "كمية المنتج",
+    "Unit_Of_Measurement":"وحدة قياس",
+    "Unit_Price": "سعر الوحدة",
+    "Commission": "سيتم إضافة العمولة",
+    "Quotation_Attachments": "مرفقات عرض الأسعار",
+    "Product_Description": "فرز حسب التاريخ",
+    "Time": "فرز حسب التاريخ",
+    "Quantity": "فرز حسب التاريخ"
+  },
+  "Seller_Quotes": {
+    "ReSubmit": "إعادة التقديم",
+    "Filter_by_Status": "التصفية حسب الحالة",
+    "Quote_Id": "معرّف عرض الأسعار",
+    "Max_Two_Files": "يمكنك إرفاق ملفين كحد أقصى"
+  },
+  "Seller_Order_History": {
+    "Paid_Status": "مدفوع",
+    "Unpaid_Status": "غير مدفوع",
+    "Total": "الإجمالي",
+    "Order_Date": "تاريخ الطلب",
+    "Payment_Status": "حالة الدفع",
+    "Total_Price": "السعر الإجمالي",
+    "Quantity": "الكمية",
+    "Proof_PDF": "إثبات"
+  },
+  "Seller_Invoice": {
+    "Invoice_ID": "هوية صوتية",
+    "Pending": "قيد الانتظار"
+  },
+  "Seller_Tickets": {
+  "New_Ticket": "تذكرة جديدة",
+  "Ticket_List": "قائمة التذاكر",
+  "Report_ID": "معرّف التقرير",
+  "Subject": "الموضوع",
+  "Running": "قيد التنفيذ",
+  "Solved": "تم الحل",
+  "Initiated": "تم البدء",
+  "Date": "التاريخ",
+  "Details": "التفاصيل",
+  "Admin_Response": "رد المسؤول",
+  "Create_Ticket": "إنشاء تذكرة جديدة",
+  "Submit": "قائمة التذاكر",
+  "Upload_image": "قائمة التذاكر",
+  "Issue_Title_Error": "اكتب موضوعك هنا",
+  "Issue_Description_Error": "اكتب المشكلة بالتفصيل ..."
+  },
+  "Buyer_Cart":{
+    "My_Cart": "سلة التسوق",
+    "Sub_Total": "المجموع الفرعي",
+    "Discount": "الخصم",
+    "VAT": "ضريبة القيمة المضافة",
+    "Proceed": "المتابعة",
+    "Add_discount": "الكوبون مضاف"
+  },
+  "Buyer_Checkout":{
+    "title": "الخروج",
+    "Addresses": "العناوين",
+    "New_Address": "العنوان الجديد",
+    "Sub_Total": "المجموع الفرعي",
+    "required": "مطلوب",
+    "Choose_Payment": "اختر طريقة الدفع",
+    "Card": "البطاقة",
+    "Wire": "التحويل البنكي",
+    "Place_Order": "تقدم"
+  },
+  "Buyer_Order_Details":{
+    "Title": "تفاصيل الطلب",
+    "Order_placed": "تم تقديم الطلب",
+    "Order_Confirmed": "تم تأكيد الطلب",
+    "Order_Processing": "معالجة الطلب",
+    "Order_Completed": "اكتمل الطلب",
+    "Payment_Details": "تفاصيل الدفع",
+    "Payment_Method": "طريقة الدفع",
+    "Wire_Transfer": "التحويل الإلكتروني",
+    "Wire_Text": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    "Account_Number": "رقم الحساب",
+    "Upload_Invoice": "تم تقديم الطلب",
+    "Download_Invoice": "تم تقديم الطلب",
+    "Account_Holder": "تم تقديم الطلب",
+    "Bank_Name": "تم تقديم الطلب"
+  },
+  "Buyer_Support_Ticket":{
+    "Title": "رفع تذكرة دعم",
+    "New_Ticket": "فتح تذكرة جديدة",
+    "Ticket_ID": "معرف التذكرة",
+    "Subject": "الموضوع",
+    "Description":"الوصف",
+    "Tell_us":"أخبرنا بالمزيد",
+    "Order_no":"رقم الطلب (اختياري)",
+    "Order_place": "رقم الطلب"
+  },
+  "Seller_Current_Orders": {
+    "Update_Status": "تحديث الحالة",
+  "Progress": "قيد التقدم",
+  "Delivered": "تم التسليم",
+  "Completed": "مكتمل",
+  "Delivery_Attach_Message": "الرجاء تحميل إثبات التسليم",
+  "Delivery_Note": "إشعار التسليم"
+},
+"Our_Partners_Common":{
+  "Success_Stories":"قصص نجاح الشريك"
+},
+"Seller_Sign_Up":{
+  "Join_Us": "انضم إلينا",
+  "text1": "لنبدأ الرحلة!",
+  "Password": "كلمة المرور",
+  "Commercial_Registration": "التسجيل التجاري",
+  "Expiry_Date": "تاريخ انتهاء الصلاحية",
+  "VAT_Certificate": "شهادة ضريبة القيمة المضافة",
+  "Terms": "أوافق على شروط وأحكام EMDAD وسياسة الخصوصية وصحة المعلومات المقدمة",
+  "Register": "سجل",
+  "Already_have": "لديك بالفعل الحساب؟"
+},
+"Seller_Sign_In":{
+  "text1": "مرحبًا ، فلنبدأ!",
+  "Remember_me": "تذكرني",
+  "Forgot_Password": "هل نسيت كلمة المرور؟",
+  "Not_Seller": "لست بائعًا بعد؟"
+},
+"Buyer_Sign_In":{
+  "Email":"البريد الإلكتروني",
+  "Password":"كلمة المرور",
+  "Remember":"تذكرني",
+  "Forgot":"نسيت كلمة المرور",
+  "Sign":"تسجيل الدخول",
+  "No_Account":"ليس لديك حساب بعد؟",
+  "Create_Account":"إنشاء حساب",
+  "require":"مطلوب"
+
+},
+"Buyer_Register":{
+  "Register":"تسجيل",
+  "Full_Name":"الاسم الكامل",
+  "require":"مطلوب",
+  "Email":"البريد الإلكتروني",
+  "Password":"كلمة المرور",
+  "Confirm_Pass":"تأكيد كلمة المرور",
+  "No_Match":"لم يتطابق",
+  "Phone_Number":"رقم الهاتف (اختياري)",
+  "Process":"جارٍ المعالجة ...",
+  "Account_No":"لديك حساب بالفعل"
+  
+},
+"Seller_Product_Delete":{
+  "Delete_Prompt":"هل تريد حذف هذه المنتجات",
+  "Delete":"حذف",
+  "Cancel":"إلغاء"
+},
+"Buyer_Product_Details":{
+  "Add_Wishlist": "أضف إلى قائمة الرغبات",
+  "Remove_Wishlist": "إزالة من قائمة الرغبات",
+  "Customer_Review": "مراجعة العميل",
+  "Pickup_Location": "موقع الاستلام من المتجر:",
+  "Not_Specified": "غير محدد",
+  "Stock": "مخزون",
+  "Add_to_Cart": "أضف إلى عربة التسوق",
+  "Request_for_Quotation": "طلب عرض أسعار",
+  "Seller_Name": "اسم البائع:",
+  "Product_Details": "تفاصيل المنتج",
+  "Similar_Products": "إزالة من قائمة الرغبات",
+  "Reviews": "إزالة من قائمة الرغبات",
+  "No_Comments": "إزالة من قائمة الرغبات",
+  "More_Comments":"المزيد من التعليقات",
+  "Submit_Review":"إرسال رأيك",
+  "Seller_Description": "إزالة من قائمة الرغبات",
+  "Brand_Name": "اسم المصنع",
+  "Your_Review": "مراجعتك",
+  "DDP_Dest": "وجهة DDP",
+  "Stock-Text": "يجب أن تكون الكمية> مخزون"
+},
+"Privacy_Policy":{
+  "Privacy": "سياسة الخصوصية",
+  "Policy": "سياسة"
+},
+"Terms_Conditions":{
+  "Terms": "البنود و الظروف",
+  "Conditions": "الظروف"
+},
+"Forgot_Password":{
+  "Forget_Pass": "هل نسيت كلمة المرور؟",
+  "Sub_Text": "فقدت كلمة المرور الخاصة بك؟ الرجاء إدخال عنوان بريدك الإلكتروني",
+  "Sub_Text2": "ستتلقى رابطًا لإنشاء كلمة مرور جديدة عبر البريد الإلكتروني.",
+  "Button_Text": "إعادة تعيين كلمة المرور",
+  "Placeholder": "أدخل عنوان بريدك الإلكتروني هنا"
+},
+"Logout_Modal_Buyer":{
+  "Sure_Text": "هل أنت متأكد؟",
+  "Logout_text": "الخروج من إمداد؟ على أي حال! يمكنك دائمًا تسجيل الدخول في أي وقت.",
+  "Logout": "تسجيل الخروج",
+  "Cancel": "إلغاء"
+},
+"add_manugacturer":{
+  "Enter_Manufacterer_Name":"أدخل اسم المُصنع"
+},
+"Sell_on_emdad":{
+  "Login_text": "تسجيل الدخول",
+  "Seller_Confirm": "بائع بالفعل",
+  "Ready_text": "جاهز لتكون بائعًا",
+  "Emdad_Seller": "بائع EMDAD",
+  "How_to_Sell": "كيفية البيع على EMDAD",
+  "Product_Portfolio": "مجموعة المنتجات",
+  "Why_Us":"لماذا نحن"
+},
+"No_data-msg":
+{"Not_Available": "غير متاح",
+  "Upper_amount": "يجب أن يكون المبلغ الأعلى من المخزون",
+  "No_items_cart":"لا توجد عناصر في سلة التسوق الخاصة بك حتى الآن!",
+  "Verify_Account": "التحقق من حساب البريد الإلكتروني",
+  "Token_msg": "تم إرسال رمز مميز إلى بريدك. الرجاء إدخال الرمز المميز أدناه.",
+  "Enter_token": "أدخل الرمز",
+  "Enter_new_pass": "أدخل كلمة مرور جديدة"
+}
+
+}

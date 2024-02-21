@@ -1,0 +1,190 @@
+<!--side nav bar with toggle for mobile-->
+<section class="clearfix prod-div">
+
+    <button mat-button class="cat-menu-close-btn" [ngClass]="{ active: catMenuToggle, '': !catMenuToggle }"
+        (click)="closeCatMenu()">
+        <img src="../../../../assets/close.svg" alt="" />
+    </button>
+    <div class="side-cat-menu" [ngClass]="{ active: catMenuToggle, '': !catMenuToggle }">
+        <div class="side-nav-bar">
+            <mat-accordion *ngFor="let cat of categories">
+                <mat-expansion-panel [expanded]="expandedCat === cat.id" #subCat>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <div class="cat-head" style="font-size: 20px;">
+                                {{cat.name | titlecase}} ({{cat.total_product}})
+                            </div>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="expanded-div" [ngClass]="sideMenuCollapsed? 'd-none' : 'd-block'">
+                        <div *ngIf="cat.children.length == 0" style="font-size: 18px;">
+                            No item to show
+                        </div>
+                        <!-- level two -->
+                        <mat-accordion *ngFor="let subcategory of cat.children">
+                            <mat-expansion-panel [expanded]="expandedSubCat == subcategory.id" #childCat>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        <div class="cat-head med-child" style="font-size: 18px;">
+                                            {{subcategory.name | titlecase}}
+                                        </div>
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                        <span class="plus" *ngIf="!childCat.expanded">+</span>
+                                        <span class="minus" *ngIf="childCat.expanded">-</span>
+                                    </mat-panel-description>
+                                </mat-expansion-panel-header>
+                                <div class="expanded-div">
+                                    <div *ngIf="subcategory.children.length == 0" style="font-size: 18px;">
+                                        No item to show
+                                    </div>
+                                    <!-- level three -->
+                                    <div *ngFor="let child of subcategory.children" style="padding: 5px 0;">
+                                        <!-- [routerLink]="['/products/category/', child.id]" -->
+                                        <a (click)="getProdOnFilter(child.id, child.name, subcategory.id, subcategory.name, cat.id, cat.name);"
+                                            style="font-size: 18px;">
+                                            {{child.name | titlecase}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+    <!--side nav bar with toggle for mobile ends-->
+    <!--product list view starts-->
+    <div class="product-list-content">
+        <div class="container">
+            <!--desktop header-->
+            <section class="page-heading-holder desktop-view">
+                <h2 class="page-heading d-inline-block">{{'Seller_Product_Categories.title'|translate}}</h2>
+                <!--if row selected for delete-->
+                <button mat-raised-button class="float-right d-inline-block delete-btn" (click)="openDialog()"
+                    (click)="dleteProduct();" *ngIf="selection.hasValue() || isAllSelected()"><img
+                        src="../../../../assets/Delete.svg" alt=""> {{'Seller_Product_Categories.Bulk_Delete'|translate}}</button>
+                <!--normal state-->
+                <button mat-stroked-button class="float-right d-inline-block delete-btn-normal"  *ngIf="!selection.hasValue()"><img
+                        src="../../../../assets/icons/delete-red.svg" alt=""> {{'Seller_Product_Categories.Bulk_Delete'|translate}}</button>
+
+
+            </section>
+            <!--mobile header-->
+            <section class="page-heading-holder mobile-view">
+                <h2 class="page-heading d-inline-block">{{'Seller_Product_Categories.title'|translate}}</h2>
+
+                <!--buttons for mobile-->
+                <div class="sort-btn float-right mobile-buttons d-inline-block">
+                    <button class="filter-btn" (click)="showCatMenu();"><img src="../../../../assets/icons/filter.svg"
+                            alt=""></button>
+                            <!--if not selected anything-->
+                   <!--  <button class="delete-btn" *ngIf="!selection.hasValue()"><img
+                            src="../../../../assets/icons/delete-red.svg" alt=""></button> -->
+                            <!--if selected for delete-->
+                           
+                </div>
+            </section>
+            <section class="bread">
+                <app-seller-breadcrumbs [directoryString]="'Products / '+directoryString"></app-seller-breadcrumbs>
+            </section>
+            <section>
+                <div class="row">
+                    <div class="col-md-12 card-header">
+                        <div class="row">
+                            <div class="col-md-2 name">
+                                {{'Seller_Product_Categories.Product_Name'|translate}}
+                            </div>
+                            <div class="col-md-2 name">
+                                {{'Seller_Product_Categories.Stock'|translate}}
+                            </div>
+                            <div class="col-md-2 name">
+                                {{'Seller_Product_Categories.Unit_of_measurement'|translate}}
+                            </div>
+
+                            <div class="col-md-2 name">
+                                {{'Seller_Product_Categories.Unit_Price'|translate}}
+                            </div>
+                            <div class="col-md-2 name">
+                                {{'Seller_Product_Categories.Delivery_Method'|translate}}
+                            </div>
+                            <div class="col-md-1 name text-left">
+                                <div class="checkbox-holder mt-2">
+                                <mat-checkbox (change)="$event ? masterToggle() : null"
+                                    [checked]="selection.hasValue() && isAllSelected()"
+                                    [indeterminate]="selection.hasValue() && !isAllSelected()"
+                                    [aria-label]="checkboxLabel()">
+                                </mat-checkbox>
+                            </div>
+                            </div>
+                            <div class="col-md-1 name text-left">
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--data load-->
+                    <div class="col-md-12 cards" *ngIf="products">
+                        <div class="show-values" *ngFor="let item of products;">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-12 col-sm-12 col-12 value">
+                                    <span><span class="mobile-name">{{'Seller_Product_Categories.Product_Name'|translate}}:</span>{{item.name}}</span>
+                                </div>
+                                <div class="col-lg-2 col-md-12 col-sm-12 col-12 value">
+                                    <span><span class="mobile-name">{{'Seller_Product_Categories.Stock'|translate}}:</span>{{item.stock_quantity}}</span>
+                                </div>
+                                <div class="col-lg-2 col-md-12 col-sm-12 col-12 value">
+                                    <span *ngIf="item.unit != null"><span class="mobile-name">{{'Seller_Product_Categories.Unit_of_measurement'|translate}}
+                                            :</span>{{item.unit.name}}</span>
+                                </div>
+                                <div class="col-lg-2 col-md-12 col-sm-12 col-12 value">
+                                    <span><span class="mobile-name">{{'Seller_Product_Categories.Unit_Price'|translate}} :</span>SAR {{item.unit_price }}</span>
+                                </div>
+                                <div class="col-lg-2 col-md-12 col-sm-12 col-12 value">
+                                    <span class="mobile-name">{{'Seller_Product_Categories.Delivery_Method'|translate}} :</span>
+                                    <span *ngIf="item.delivery_method == 1">{{'Seller_Product_Categories.DDP'|translate}}</span>
+                                    <span *ngIf="item.delivery_method == 2">{{'Seller_Product_Categories.ExWorks'|translate}}</span>
+                                </div>
+
+                                <div
+                                    class="col-lg-1 col-md-1 col-sm-2 col-2 value mobile-btn ml-0 text-right align-right check-div remove-bulk">
+                                    <mat-checkbox (click)="$event.stopPropagation()"
+                                        (change)="$event ? selection.toggle(item) : null"
+                                        [checked]="selection.isSelected(item)" [aria-label]="checkboxLabel(item)">
+                                    </mat-checkbox>
+
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-2 col-2 value mobile-btn check-div remove-single">
+
+                                    <button (click)="deleteProduct(item.id);"
+                                        class="edit-product-btn" mat-raised-button><img
+                                            src="../../../../assets/icons/bin-button-mobile-red.svg" alt=""></button>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-2 col-2 value mobile-btn check-div">
+
+                                    <button [routerLink]="['/dashboard/edit-products', item.id]"
+                                        class="edit-product-btn right-btn" mat-raised-button><img
+                                            src="../../../../assets/Edit.svg" alt=""></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" *ngIf="products == undefined || products == null" class="no-show">
+                        <p>{{'Home.No_Item'|translate}}</p>
+                    </div>
+                    <div class="col-md-12" *ngIf="prodEnd" class="no-show">
+                        <p>{{'Home.No_Product'|translate}}</p>
+                    </div>
+                    <div class="col-md-12" *ngIf="expandedSubCat == null">
+                        <div class="view-more-btn-div" *ngIf="nextBatchProdLink != null">
+                            <button *ngIf="!prodEnd" (click)="getNextBatchproduct()" mat-raised-button
+                                class="m-auto">{{'Home.View_More'|translate}}
+                                <img src="../../../assets/down-carrot-light.svg" alt=""></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+<!--product list view end-->

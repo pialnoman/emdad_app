@@ -1,0 +1,276 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+a:hover {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+button:focus {
+  outline: none;
+}
+
+footer {
+  padding: 60px 0 0;
+  background: #f4f4f4;
+}
+
+.slogan {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin: 20px 0 13px;
+}
+
+footer .list-group-horizontal {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+footer .list-group-item {
+  padding: 30px 17px;
+  border: none;
+ 
+}
+/* icon-holder i {
+  vertical-align: middle;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+ } */
+.icon-holder{
+  color: #454F63;
+  /* height: 60px;
+width:60px; */
+ /* border-radius: 50%; */
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type:none !important;
+ -webkit-text-decoration-style: none !important;
+         text-decoration-style: none !important;
+ 
+}
+.icon-holder button{
+  background-color: white !important;
+  color: #454F63;
+  height: 36px;
+  width: 36px;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  font-size: 16px;
+  margin-right: 8px;
+  margin-top: 10px;
+}
+/* footer .social-links .list-group-item a {
+  color: #454F63;
+  padding: 18px 24px;
+ border-radius: 50%;
+  background: #fff;
+  font-size: 20px;
+  transition: 0.3s;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+ text-decoration-style: none !important;
+} */
+
+.social-links .icon-holder > button:hover,.social-links .icon-holder > button:active {
+  color: #fff !important;
+  background-color: #1f4f9e !important;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+ 
+}
+
+.footer-link-div ul li {
+  border: none;
+  text-transform: uppercase;
+
+}
+
+.list-group-item {
+  background-color: inherit;
+  color:#2C2C2C;
+  font-family: Jost;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 26px;
+text-transform: uppercase;
+
+}
+
+.list-group-item a:hover {
+  color: #1f4f9e;
+}
+
+footer .footer-link-div .list-group-item {
+  padding: 20px 17px;
+}
+
+.link-head {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+.copyright {
+  height: 80px;
+  line-height: 80px;
+  background: inherit;
+  text-align: center;
+  background: #e9e9e9;
+}
+.list-group-item a.no-hyper,.list-group-item a.no-hyper:hover,.list-group-item a.no-hyper:active{
+  text-decoration:none !important;
+  cursor: default !important;
+  color: #2C2C2C !important;
+}
+
+::ng-deep span.mat-button-wrapper {
+  padding: 5px 0 !important;
+}
+
+
+.footer-logo img {
+  height: 80px;
+}
+@media only screen and (min-width: 1200px) {
+  /* .container {
+    max-width: 1600px !important;
+  } */
+  .list-group-horizontal{
+    margin-left: 1px;
+  }
+}
+
+
+
+@media only screen and (max-width: 992px) {
+  footer {
+    padding: 30px 0 0;
+  }
+  .footer-logo {
+    text-align: left !important;
+  }
+  .footer-logo img {
+    height: 60px;
+  }
+  .slogan {
+    font-size: 14px;
+    text-align: left !important;
+    margin: 20px 0 10px;
+  }
+  .social-links {
+    text-align: left !important;
+  }
+  footer .list-group-item {
+    padding-top: 0;
+  }
+  footer .list-group-item:first-child {
+    padding-left: 0;
+  }
+  footer .social-links .icon-holder button{
+   
+    font-size: 15px;
+  height: 50px;
+  width: 50px;
+  margin-top: 10px;
+  
+  }
+  .footer-link-div ul {
+    margin-bottom: 25px;
+  }
+  .footer-link-div ul .list-group-item {
+    padding: 5px 0;
+  }
+  .footer-link-div ul li {
+    font-size: 18px;
+  }
+  .copyright {
+    height: 60px;
+    line-height: 60px;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  footer {
+    padding: 30px 0 0;
+  }
+  .footer-logo {
+    /* text-align: left !important; */
+  }
+  .footer-logo img {
+    height: 70px;
+  
+  }
+  .slogan {
+    font-size: 14px;
+    /* text-align: left !important; */
+    margin: 20px 0 10px;
+  }
+  .social-links {
+    text-align: left !important;
+  }
+  footer .list-group-item {
+    padding-top: 0;
+  }
+  footer .list-group-item:first-child {
+    padding-left: 0;
+  }
+  footer .social-links .icon-holder button {
+    font-size: 15px;
+    height: 40px;
+    width: 40px;
+  }
+::ng-deep .mat-fab .mat-button-wrapper {
+    padding: 9px 0 !important;
+    display: inline-block;
+    line-height: 24px;
+}
+ .footer-link-div ul {
+    margin-bottom: 25px;
+  }
+  .footer-link-div ul .list-group-item {
+    padding: 5px 0;
+  }
+  .footer-link-div ul li {
+    font-size: 18px;
+  }
+  .copyright {
+    height: 60px;
+    font-size: 14px;
+line-height: 60px;
+  }
+  .link-head{
+    font-size: 18px;
+line-height: 26px;
+  }
+  .list-group-item a {
+    font-size: 14px !important;
+line-height: 20px !important;
+  }
+}
+@media all and (min-width:290px) and (max-width:599px){
+  .list-group-horizontal{
+    margin-left: 1px;
+  }
+}

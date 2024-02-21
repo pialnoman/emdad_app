@@ -1,0 +1,147 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+*:focus {
+  outline: none;
+}
+
+.breadcrumbs {
+  background: transparent;
+  height: 110px;
+  /* margin: 260px 0 60px; */
+  padding: 25px 0;
+}
+
+.breadcrumbs-for-seller {
+  background: #fff;
+  height: 110px;
+  /* margin: 60px 0 60px; */
+  padding: 25px 0;
+}
+.url {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+ /*  font-size: 30px;
+  line-height: 60px; */
+  font-size: 24px;
+line-height: 35px;
+color: #2B2B2B;
+  
+
+}
+
+.serach-result {
+  margin-right: 20px;
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 35px;
+  color: #2B2B2B;
+}
+.clear{
+  margin-right: 15px;
+  font-family: Jost;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 35px;
+text-decoration: 1px #1f4f9e solid underline;
+color: #1F4F9E;
+}
+.clear-btn {
+  margin-right: 40px;
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 60px;
+}
+
+button {
+  width: 58px;
+  height: 58px;
+  border: 2px solid #454f63;
+  border-radius: 5px;
+  line-height: 59px;
+  margin-right: 15px;
+}
+select {
+  height: 58px;
+  border: 2px solid #454f63;
+  border-radius: 5px;
+  margin-right: 15px;
+  -webkit-box-shadow: 0px 2px 1px rgb(0 0 0 / 30%);
+          box-shadow: 0px 2px 1px rgb(0 0 0 / 30%);
+}
+select:focus {
+  border: 2px solid #454f63;
+  -webkit-box-shadow: 0px 2px 1px rgb(0 0 0 / 30%);
+          box-shadow: 0px 2px 1px rgb(0 0 0 / 30%);
+}
+a {
+  color: #2B2B2B !important;
+  text-decoration: none !important;
+}
+/* @media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1600px !important;
+  }
+} */
+
+@media only screen and (min-width: 300px) and (max-width: 992px) {
+  .col-sx-none {
+    display: none;
+  }
+  .breadcrumbs {
+    height: 60px;
+    margin: 0px 0 20px;
+    padding: 18px 0;
+  }
+  .breadcrumbs-for-seller {
+    background: #fff;
+    height: 60px;
+    margin: 20px 0 20px;
+    padding: 18px 0;
+  }
+  .url {
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .serach-result,.clear{
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .breadcrumbs {
+    height: 70px;
+    margin: 0px 0 20px;
+    padding: 20px 0;
+  }
+  .url {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  button {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    line-height: 22px;
+    padding: 0;
+  }
+  .serach-result,.clear{
+    font-size: 18px;
+    line-height: 25px;
+  }
+  #list_btn,#grid_btn{
+    height: 35px;
+    width:35px;
+  }
+}

@@ -1,0 +1,76 @@
+<div class="container">
+  <h3 class="header-text">{{'Buyer_Profile.Header' | translate}}</h3>
+  <div class="row">
+    <!-- <div class=""> -->
+      <div class="col-xs-none col-sm-none col-md-none col-lg-block col-lg-4">
+        <div class="card-body" style="background: #ffffff">
+          <ul class="list-group list-group-flush">
+            <li [ngClass]="
+              show_profile_form === true
+                ? 'list-group-item active'
+                : 'list-group-item'
+            " (click)="
+              show_change_pass_form = false;
+              show_profile_form = true;
+              show_order_history = false;
+              show_manage_quotations = false
+            ">
+              {{'Nav.Profile_Settings' | translate}}
+            </li>
+            <li [ngClass]="
+              show_change_pass_form === true
+                ? 'list-group-item active'
+                : 'list-group-item'
+            " (click)="
+              show_profile_form = false;
+              show_change_pass_form = true;
+              show_order_history = false;
+              show_manage_quotations = false
+            ">
+            {{'Nav.Change_Password' | translate}}
+            </li>
+            <li [ngClass]="
+              show_order_history === true
+                ? 'list-group-item active'
+                : 'list-group-item'
+            " (click)="
+              show_profile_form = false;
+              show_change_pass_form = false;
+              show_order_history = true;
+              show_manage_quotations = false
+            " class="list-group-item">
+            {{'Nav.Order_History' | translate}}
+            </li>
+            <li [ngClass]="
+              show_manage_quotations === true
+                ? 'list-group-item active'
+                : 'list-group-item'
+            " (click)="
+              show_manage_quotations = true;
+              show_change_pass_form = false;
+              show_order_history = false;
+              show_profile_form = false
+            ">
+            {{'Nav.Manage_Quotation' | translate}}
+            </li>
+            <li class="list-group-item" (click)="show_logout_modal()">{{'Header_DropDowns.Log_Out' | translate}}</li>
+          </ul>
+        </div>
+      </div>
+    <!-- </div> -->
+    <div class="col-12 col-sm-12 col-md-12 col-lg-8 profile-page-content">
+      <div class="" style="background: #ffffff">
+        <app-change-password-form *ngIf="show_change_pass_form"></app-change-password-form>
+        <app-edit-profile-form *ngIf="show_profile_form" [userId]="userId"></app-edit-profile-form>
+        <app-order-history-table *ngIf="show_order_history"></app-order-history-table>
+        <app-manage-quotations-table *ngIf="show_manage_quotations"></app-manage-quotations-table>
+        <!-- quotation modal is now in manage-quotation-table -->
+        <!-- <quotation-details-modal
+        (quotation)="pass_quotation_to_modal($event)"
+        [quotation]="channel_quotation"
+      ></quotation-details-modal> -->
+        
+      </div>
+    </div>
+  </div>
+</div>

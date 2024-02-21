@@ -1,0 +1,118 @@
+<section>
+    <h2 class="page-heading">{{'Nav.Change_Password'|translate}}</h2>
+</section>
+<section class="card mb-5">
+    <form [formGroup]="changePassForm" (ngSubmit)="onSubmit(changePassForm.value)">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="crntPassword">{{'Buyer_Change_Password_Form.Current_Password'|translate}}</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><img src="../../../../assets/icons/Lock.svg" alt=""></div>
+                        </div>
+                        <!-- crntPassword -->
+                        <input id="crntPassword" [type]="showPassState ? 'text' : 'password'"
+                            class="form-control form-control-md" formControlName="crntPassword" required
+                            (keyup)="matchBothPassord(crntPassword.value, confPassword.value)" />
+                        <div class="input-group-prepend" *ngIf="!showPassState" (click)="showPass();">
+                            <div class="input-group-text">
+                               <img src="../../../../assets/icons/Show.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="input-group-prepend" *ngIf="showPassState" (click)="hidePass();">
+                            <div class="input-group-text">
+                                <i class="fas fa-eye-slash"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="crntPassword.invalid && (crntPassword.dirty || crntPassword.touched)">
+                        <div *ngIf="crntPassword.errors?.required">
+                            <app-form-input-alert [alertMsg]="'Current password is required.'"></app-form-input-alert>
+                        </div>
+                        <!-- <div *ngIf="crntPassword.errors?.minLength">
+                            <app-form-input-alert [alertMsg]="'crntPassword length is minimum 8 characters.'">
+                            </app-form-input-alert>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="newPassword">{{'Buyer_Change_Password_Form.New_Password'|translate}}</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><img src="../../../../assets/icons/Lock.svg" alt=""></div>
+                        </div>
+                        <!-- confirm password -->
+                        <input id="newPassword" [type]="confShowPassState ? 'text' : 'password'"
+                            class="form-control form-control-md" formControlName="newPassword" required />
+                        <div class="input-group-prepend" *ngIf="!confShowPassState" (click)="confShowPass();">
+                            <div class="input-group-text">
+                               <img src="../../../../assets/icons/Show.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="input-group-prepend" *ngIf="confShowPassState" (click)="confHidePass();">
+                            <div class="input-group-text">
+                                <i class="fas fa-eye-slash"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="newPassword.invalid && (newPassword.dirty || newPassword.touched)">
+                        <div *ngIf="newPassword.errors?.required">
+                            <app-form-input-alert [alertMsg]="'New password is required.'"></app-form-input-alert>
+                        </div>
+                        <!-- <div *ngIf="newPassword.errors?.minLength">
+                            <app-form-input-alert [alertMsg]="'password length is minimum 8 characters.'">
+                            </app-form-input-alert>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="confPassword">{{'Buyer_Change_Password_Form.Confirm_Password'|translate}}</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><img src="../../../../assets/icons/Lock.svg" alt=""></div>
+                        </div>
+                        <!-- confirm password -->
+                        <input id="confPassword" [type]="confShowPassState ? 'text' : 'password'"
+                            class="form-control form-control-md" formControlName="confPassword" required
+                            (keyup)="matchBothPassord(newPassword.value, confPassword.value)" />
+                        <div class="input-group-prepend" *ngIf="!confShowPassState" (click)="confShowPass();">
+                            <div class="input-group-text">
+                               <img src="../../../../assets/icons/Show.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="input-group-prepend" *ngIf="confShowPassState" (click)="confHidePass();">
+                            <div class="input-group-text">
+                                <i class="fas fa-eye-slash"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="confPassword.invalid && (confPassword.dirty || confPassword.touched)">
+                        <div *ngIf="confPassword.errors?.required">
+                            <app-form-input-alert [alertMsg]="'Confirm password.'"></app-form-input-alert>
+                        </div>
+                        <!-- <div *ngIf="confPassword.errors?.minLength">
+                            <app-form-input-alert [alertMsg]="'password length is minimum 8 characters.'">
+                            </app-form-input-alert>
+                        </div> -->
+                    </div>
+                    <div *ngIf="passMatched && confPassword.value != ''">
+                        <app-form-input-alert [alertMsg]="'Both password should match!'"></app-form-input-alert>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group submit-btn">
+                    <button type="submit" mat-raised-button class="btn btn-primary btn-md login_btn"
+                        [disabled]="changePassForm.invalid || passMatched">
+                        {{'Buttons.Save'|translate}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

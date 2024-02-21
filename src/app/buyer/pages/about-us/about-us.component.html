@@ -1,0 +1,77 @@
+<!--17th and 20th march 2021-->
+<section class="about-us" *ngIf="aboutusData">
+    <!-- First row content -->
+    <div class="first-row mt-0 ml-0">
+        <div class="img-div-top m-0 p-0 h-100">
+
+            <img src="{{ base_url + aboutusData.sec1_image }}" alt="about-us" class="img-fluid">
+        </div>
+        <div class="text-div">
+            <h1 class="pb-2">{{aboutusData.sec1_title | titlecase}}</h1>
+            <p class="about-para" [innerHTML]="visionDesc"></p>
+        </div>
+    </div>
+    <!-- 2nd row vision row -->
+    <div class="vision-row">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <!--text row -->
+                    <div class="vision-text">
+                        <h1 class="head pb-2">{{aboutusData.sec2_title | titlecase}}</h1>
+                        <div class="vision-list" [innerHTML]="section2Description"></div>
+                        <!-- <ul class="vision-list" *ngFor="let vision of aboutusData.sec2_description|pushIntoArray">
+                            <li class="mb-2">{{vision}}</li>
+                        </ul> -->
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <!--image row-->
+                    <div class="image-div">
+
+                        <img src="{{ base_url + aboutusData.sec2_image }}" alt="vision" class="img-fluid w-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--3rd row mission row-->
+    <div class="mission-row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 col-12">
+                    <!--image row-->
+                    <div class="mission-div">
+
+                        <img src="{{ base_url + aboutusData.sec3_image }}" alt="mission" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 col-12">
+                    <!--text row -->
+                    <div class="mission-text">
+                        <h1 class="head pb-2">{{aboutusData.sec3_title | titlecase}}</h1>
+                        <div class="vision-list" [innerHTML]="missionDesc"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 4th row values row-->
+
+    <div class="value-row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-12">
+                    <div class="values-text">
+                        <h1 class="head pb-2">{{aboutusData.sec4_title | titlecase}}</h1>
+                        <p class="value-para" [innerHTML]="valuesDesc"></p>
+                    </div>
+                    <div class="values-img">
+                        <img src="{{ base_url + aboutusData.sec4_image }}" alt="values" class="img-fluid mt-2 center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

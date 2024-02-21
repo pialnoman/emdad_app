@@ -1,0 +1,33 @@
+<!-- <div class="input-group search-input">
+    <input #searchInputDiv (focus)="update_suggestions()" (focusout)="focusOutFunction()"  (input)="update_suggestions()" type="text" class="form-control" placeholder="Search by products..." [(ngModel)]="searchInput" (keydown.enter)="search()">
+    <div class="input-group-append">
+        <button (click)="search()" mat-raised-button>
+            <span class="input-group-text"><img src="../assets/search.svg" alt=""></span>
+        </button>
+    </div>
+</div>
+<div *ngIf="show_suggestion" class="suggestion-box mt-2" [ngStyle]="{'width.px': searchInputDiv.offsetWidth + 98}">
+    <div class="d-flex flex-column">
+        <div class="flex-start" *ngFor="let product of products;let i=index">
+            <p class="prod-name" (mousedown)="setItem(product.name)">{{product.name}}</p>
+            <mat-divider *ngIf="i!=products.length-1"></mat-divider>
+        </div>
+    </div>
+    (keydown.enter)="search($event)"
+</div> -->
+
+<div class="d-inline-block ng-autocomplete m-auto">
+    <ng-autocomplete [data]="products" [searchKeyword]="keyword" (selected)='onSelectItem($event)'
+        (inputChanged)='update_suggestions($event)' (inputFocused)='update_suggestions();' [itemTemplate]="itemTemplate"
+         placeholder="{{'Banner.Search' | translate}}" [isLoading]="isLoading" (keydown.enter)="search()">
+    </ng-autocomplete>
+
+    <ng-template #itemTemplate let-item>
+        <a [innerHTML]="item.name"></a>
+    </ng-template>
+
+    <!-- <ng-template #notFoundTemplate let-notFound>
+        <div [innerHTML]="notFound"></div>
+    </ng-template> -->
+</div>
+<button mat-raised-button (click)="search()"><img src="../assets/search.svg" alt=""></button>

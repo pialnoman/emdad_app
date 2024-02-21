@@ -1,0 +1,113 @@
+<section class="banner">
+    <!-- <img src="" alt=""> banner image-->
+    <div class="search-holder">
+        <h2>{{'Banner.Search' | translate}}</h2>
+        <app-search-for class="m-auto"></app-search-for>
+    </div>
+</section>
+<section id="cat_menu" class="categories d-sx-none d-sm-none d-md-none d-lg-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2" *ngFor="let category of categories | slice:0:5; let i = index">
+                <div class="single-category" [ngClass]="getCatActiveClass(i)" (click)="catClicked(category, i)">
+                    <span class="cat-icon-holder">
+                        <img *ngIf="category.icon == null" src="../../../assets/Category.svg" alt="">
+                        <img *ngIf="category.icon != null" src="{{imgBaseUrl}}{{category.icon}}" alt="">
+                    </span>
+                    <span class="cat-title">
+                        {{category.name}}
+                    </span>
+                </div>
+                <!-- <div class="media">
+                    <img class="mr-3" *ngIf="category.icon == null" src="../../../assets/Category.svg" alt="">
+                    <img class="mr-3" *ngIf="category.icon != null" src="{{imgBaseUrl}}{{category.icon}}" alt="">
+                    <div class="media-body">
+                        <div class="cat-title">
+                            {{category.name}}
+                        </div>
+                    </div>
+                  </div> -->
+            </div>
+            <div class="subCategory" *ngIf="isDisplay == 'true'">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p class="subCatItem"
+                                *ngFor="let subCat of categories[selectedCat].children; let i = index">
+                                <span (mouseenter)="showChildrenCat(categories[selectedCat].children, i)"
+                                    (click)="showChildrenCat(categories[selectedCat].children, i)"
+                                    [ngClass]="getSubCatActiveClass(i)">{{subCat.name}}</span>
+                            </p>
+                            <p *ngIf="categories[selectedCat].children == undefined">
+                                No Sub-categories listed
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="children" *ngFor="let subCatChild of subCatChildrens; let i = index">
+                                <span><a
+                                        [routerLink]="['/products/category/', subCatChild.id]">{{subCatChild.name}}</a></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2" *ngIf="categories?.length>0">
+                <div class="single-category" [routerLink]="['/products/categories']">
+                    <div class="cat-icon-holder">
+                        <img src="../../../assets/Category.svg" alt="">
+                    </div>
+                    <div class="cat-title">
+                        View All Categories
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container">
+    <div class="product-list-header">
+        {{'Home.Popular_Products' | translate}}
+    </div>
+    <!-- <app-popular-products></app-popular-products> -->
+    <app-product-list [products]="products" [prodEnd]="prodEnd" [prodInRow6]="prodInRow6"></app-product-list>
+</section>
+<section class="container list-show">
+    <div class="product-list-header popular-cat-div-sm">
+        {{'Home.Popular_Categories' | translate}}
+    </div>
+    <div class="row">
+        <div class="col-6 col-sm-4 col-md-4 col-lg-2 text-center"
+            *ngFor="let category of popularCategories | slice:0:6; let i = index">
+            <!-- <span *ngIf="category.children">
+                <span *ngIf="category.children[0].children"> -->
+                    <a [routerLink]="['/products/category/', category.id]">
+                        <div class="cat-round-bg">
+                            <img src="../../../assets/popular-cat.svg" alt="">
+                            <img src="../../../assets/popular-cat-dark.svg" alt="">
+                            <span
+                                class="d-sx-none d-sm-none d-md-none d-lg-block cat-lg">{{category.name | titlecase}}</span>
+                        </div>
+                        <p class="popular-cat-sm d-md-block d-lg-none">{{category.name | titlecase}}</p>
+                    </a>
+                <!-- </span>
+            </span> -->
+        </div>
+    </div>
+</section>
+<section class="container recent-prods">
+    <div class="product-list-header">
+        {{'Home.Recent_Products' | translate}}
+    </div>
+    <app-product-list [products]="products" [prodEnd]="prodEnd" [prodInRow6]="prodInRow6"></app-product-list>
+    <p *ngIf="prodEnd || products?.length == 0" class="text-center no-prod mt-5"><b>{{'Home.No_Product' | translate}}</b></p>
+    <div class="view-more-btn-div" *ngIf="nextBatchProdLink != null">
+        <button *ngIf="!prodEnd" (click)="getNextBatchproduct()" mat-raised-button class="m-auto">{{'Home.View_More' | translate}} <img
+                src="../../../assets/down-carrot-light.svg" alt=""></button>
+    </div>
+</section>
+<!-- <section class="container">
+    <div class="send-suggestion-div">
+        <span>Send Suggestion & Recommendation for EMDAD! &nbsp;</span>
+        <button mat-raised-button>Send Now</button>
+    </div>
+</section> -->

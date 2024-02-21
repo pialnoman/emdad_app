@@ -1,0 +1,243 @@
+*:focus {
+  outline: none;
+  box-shadow: none;
+}
+.payment{
+  padding: 30px;
+  font-family: Jost;
+}
+.page-heading {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 69px;
+  padding: 40px 0;
+  margin: 0;
+}
+.bill-pay >form,.card-body{
+  background: #fff;
+  border-radius: 5px;
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-top: 40px;
+ 
+}
+
+label {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+  color: #2b2b2b;
+  text-transform: capitalize;
+}
+.form-control {
+  background: #efefef;
+  border-radius: 5px;
+  border: none;
+  height: 80px;
+}
+
+.form-label {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 29px;
+  color: #2b2b2b;
+}
+.input-group-text {
+  border: 0 !important;
+  background: #efefef;
+  padding: 0 10px;
+  font-size: 17px;
+  font-family: Jost;
+}
+.input-group-text img{
+  height: 22px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+.btn {
+  border: none;
+}
+
+.alert-danger {
+  background: transparent;
+  border: none;
+  color: #ff5f92;
+}
+.login_btn {
+  background: #1f4f9e;
+  border-radius: 5px;
+  height: 80px;
+  font-weight: 500;
+  font-size: 24px;
+  padding: 10px 90px;
+  margin-top: 20px;
+}
+
+
+.show-value,.amount{
+  font-family: Jost;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 35px;
+color: #2B2B2B;
+}
+.total,.ta{
+  font-weight: 500;
+}
+/*responsive -_- :/ */
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1600px !important;
+  }
+}
+ @media all and (min-width:290px) and (max-width:575px){
+  .login_btn{
+    height: 45px;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 10px 30px;
+    margin-top: 14px;
+  }
+  label,.form-check-label,.join-text{
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .page-heading {
+    font-size: 30px;
+    line-height: 40px;
+    padding: 20px 0;
+  }
+  .show-value,.amount{
+    font-size: 18px;
+  line-height: 25px;
+  }
+  .form-control{
+    height: 50px;
+  }
+  .input-group-text{
+font-size: 14px;
+  }
+  .input-group-text img{
+    height: 14px;
+  }
+  .payment{
+    padding: 15px;
+  }
+ }
+ @media all and (min-width:575px) and (max-width:768px){
+  .login_btn{
+    height: 45px;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 10px 30px;
+    margin-top: 14px;
+  }
+  label,.form-check-label,.join-text{
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .page-heading {
+    font-size: 30px;
+    line-height: 40px;
+    padding: 20px 0;
+  }
+  .show-value,.amount{
+    font-size: 18px;
+  line-height: 25px;
+  }
+  .form-control{
+    height: 50px;
+  }
+  .input-group-text{
+font-size: 14px;
+  }
+  .input-group-text img{
+    height: 14px;
+  }
+  .payment{
+    padding: 15px;
+  }
+  .login_btn{
+    height: 45px;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 10px 60px;
+    margin-top: 14px;
+  }
+ }
+ @media all and (min-width:768px) and (max-width:992px){
+  .login_btn{
+    height: 60px;
+    font-size: 22px;
+    line-height: 30px;
+    padding: 10px 60px;
+    margin-top: 14px;
+  }
+  label,.form-check-label,.join-text{
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .page-heading {
+    font-size: 40px;
+    line-height: 50px;
+    padding: 20px 0;
+  }
+  .show-value,.amount{
+    font-size: 20px;
+  line-height: 26px;
+  }
+  .form-control{
+    height: 60px;
+  }
+  .input-group-text{
+font-size: 15px;
+  }
+  .input-group-text img{
+    height: 20px;
+  }
+  .payment{
+    padding: 20px;
+  }
+}
+@media all and (min-width:992px) and (max-width:1200px){
+  .login_btn{
+    height: 60px;
+    font-size: 22px;
+    line-height: 30px;
+    padding: 10px 60px;
+    margin-top: 14px;
+  }
+  label,.form-check-label,.join-text{
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .page-heading {
+    font-size: 40px;
+    line-height: 50px;
+    padding: 20px 0;
+  }
+  .show-value,.amount{
+    font-size: 20px;
+  line-height: 26px;
+  }
+  .form-control{
+    height: 60px;
+  }
+  .input-group-text{
+font-size: 15px;
+  }
+  .input-group-text img{
+    height: 20px;
+  }
+  .payment{
+    padding: 20px;
+  }
+}

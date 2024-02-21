@@ -1,0 +1,95 @@
+<!--01st april 2021-->
+<section class="payment-history container">
+    <div class="page-heading-holder">
+    <h2 class="page-heading">{{'Seller_Menu.Current_Orders'|translate}}</h2>
+    <div class="sort-btn d-inline-block big-view">
+        <button mat-stroked-button class="sort-btn" (click)="sortTable()">{{'Seller_RFQ.Sort'|translate}}</button>
+      
+               
+    </div>
+  </div>
+  <div class="mobile-name">
+    <button mat-stroked-button class="sort-btn" (click)="sortTable()">{{'Seller_RFQ.Sort'|translate}}</button>
+     
+  </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-12 card-header">
+          <div class="row">
+            <div class="col-md-2 name">
+                {{'Buyer_Order_History.Order_ID'|translate}}
+            </div>
+            <div class="col-md-2 name">
+                {{'Buyer_Order_History.Payment_Date'|translate}}
+            </div>
+            <div class="col-md-2 name">
+              {{'Buyer_Order_History.Delivery_Date'|translate}}
+            </div>
+            <div class="col-md-2 name">
+              {{'Buyer_Order_History.Amount'|translate}}
+            </div>
+            <div class="col-md-2 name">
+              {{'Buyer_Quotation_History.Status'|translate}}
+            </div>
+            
+            <div class="col-md-2 name">
+              
+            </div>
+          </div>
+        </div>
+  
+        <mat-divider></mat-divider>
+  
+        <!--cards if valid data-->
+        <div class="col-md-12 cards" *ngIf="orders ">
+          <div class="show-values" *ngFor="let item of orders">
+            <div class="row">
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12 value">
+               <span> #{{item.order.order_code}}</span>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12 value">
+                <span><span class="mobile-name">{{'Buyer_Order_History.Payment_Date'|translate}} :</span> {{item.order.order_payment?.length>0 ? formatDate(item.order.order_payment[0].created_at) : '-'}}</span>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12 value">
+                <span><span class="mobile-name">{{'Buyer_Order_History.Delivery_Date'|translate}} :</span> {{formatDate(item.delivery_date)}}</span>
+              </div>
+              <!--amount-->
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12 value">
+                <span><span class="mobile-name">{{'Buyer_Order_History.Amount'|translate}} :</span>SAR {{item.order.total_amount}}</span>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-6 col-12 value">
+                <mat-chip-list aria-label="Fish selection">
+                    <!-- <mat-chip *ngIf="element.status == 1" class="order-created-chips">Created</mat-chip>
+                    <mat-chip *ngIf="element.status == 2" class="order-confirmed-chips">Confirmed</mat-chip> -->
+                    <mat-chip *ngIf="decide_status(item) == 1" class="order-confirmed-chips">{{'Seller_Dashboard.Recieved'|translate}}</mat-chip>
+                    <mat-chip *ngIf="decide_status(item) == 2" class="order-confirmed-chips">{{'Seller_Dashboard.Recieved'|translate}}</mat-chip>
+                    <mat-chip *ngIf="decide_status(item) == 3" class="order-processing-chips">{{'Seller_Dashboard.Processing'|translate}}</mat-chip>
+                    <mat-chip *ngIf="decide_status(item) == 4" class="order-delivered-chips">{{'Seller_Dashboard.Delivered'|translate}}</mat-chip>
+                    <!-- <mat-chip *ngIf="element.status == 5" class="order-completed-chips">Completed</mat-chip> -->
+                </mat-chip-list>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-12 col-12 value mobile-btn">
+                <span class="big-view"><button class="edit-product-btn" mat-button (click)="openDialog(item);">{{'Buttons.View'|translate}}</button></span>
+                <span class="mobile-name"><button class="edit-product-btn mob"  mat-raised-button (click)="openDialog(item);" >{{'Buttons.View'|translate}}</button></span>
+              </div>
+            </div>
+          </div>
+        </div>
+            <!--cards if no data-->
+            <div class="col-md-12" *ngIf="orders" >
+              <div class="no-data mt-2" *ngIf="orders == null || orders == undefined || orders?.length == 0">
+                {{'Buyer_Order_History.No_Data'|translate}}
+              </div>
+            </div>
+        <!--pagination-->
+     <!--    <div class="col-md-12 col-12 mt-2 pagination-show" *ngIf="orders" >
+          <mat-paginator *ngIf="orders != null || orders != undefined" 
+            [length]="orders.length" [pageSize]="10" [pageSizeOptions]="[5, 10, 15,20]"
+            (page)="getPaginatorData($event)">
+          </mat-paginator>
+        </div> -->
+    
+      </div>
+    </div>
+  </section>
+  <ngx-spinner></ngx-spinner>

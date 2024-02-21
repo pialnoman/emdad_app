@@ -1,0 +1,79 @@
+<mat-dialog-actions align="end" class="p-0 m-0">
+    <button mat-dialog-close class="close-btn"><i class="fas fa-times mt-0 p-0"></i></button>
+</mat-dialog-actions>
+<mat-dialog-content class="mat-typography">
+    <section>
+        <h3 class="open-ticket-modal-header">
+            {{'Seller_Tickets.Create_Ticket'|translate}}
+        </h3>
+    </section>
+    <section>
+        <!--form for support ticket-->
+        <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="title">{{'Seller_Tickets.Subject'|translate}}</label>
+                        <div class="input-group">
+                            <!-- title -->
+                            <input id="title" class="form-control form-control-md" type="text"
+                                formControlName="title" required placeholder="{{'Seller_Tickets.Issue_Title_Error'|translate}}"/>
+                        </div>
+                        <div *ngIf="title.invalid && (title.dirty || title.touched)">
+                            <div *ngIf="title.errors?.required">
+                                <app-form-input-alert [alertMsg]="'Issue Title is required'"></app-form-input-alert>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="description">{{'Seller_Tickets.Details'|translate}}</label>
+                        <div class="input-group">
+                            <!-- description -->
+                            <textarea rows="15" id="description" class="form-control form-control-md" type="text"
+                                formControlName="description" placeholder="{{'Seller_Tickets.Issue_Description_Error'|translate}}"></textarea>
+                        </div>
+                        <div *ngIf="description.invalid && (description.dirty || description.touched)">
+                            <div *ngIf="description.errors?.required">
+                                <app-form-input-alert [alertMsg]="'Issue Description is required.'"></app-form-input-alert>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Image upload-->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="d-block">{{'Seller_Tickets.Upload_image'|translate}}</label>
+                        <label for="image" class="custom-file-upload" *ngIf="isEnabled">
+                            <input id="image" class="form-control form-control-md" type="file" accept="image/*"
+                                formControlName="image" (change)="handleFileSelect($event);" [disabled]="isEnabled" />
+                        </label>
+                        <!--showing the attached files thumbnails-->
+                        <ul class="attached-file" *ngIf="selectedImage">
+                            <li >
+                                <img class="imageUploadButton form-group"
+                                
+                                id="preview"
+                              />
+                                
+                            </li>
+                            <button mat-mini-fab (click)="removeFile();" class="mt-2">
+                                <mat-icon>close</mat-icon>
+                              </button>
+                        </ul>
+                    </div>
+                </div>
+                <!--Submit-->
+                <div class="col-12">
+                    <div class="form-group submit-button">
+                        <button type="submit" [mat-dialog-close]="true" mat-raised-button class="btn btn-primary btn-md  login_btn"
+                            [disabled]="ticketForm.invalid">
+                            {{'Seller_Tickets.Submit'|translate}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+</mat-dialog-content>

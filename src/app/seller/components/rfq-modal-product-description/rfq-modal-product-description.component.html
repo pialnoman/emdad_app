@@ -1,0 +1,41 @@
+<section class="content-desc container" *ngIf="rfqDetailData">
+
+    <div class="close-btns">
+        <mat-dialog-actions align="end" class="p-0 m-0">
+            <button mat-dialog-close><i class="fas fa-times mt-0 p-0"></i></button>
+        </mat-dialog-actions>
+    </div>
+    <div class="row mt-2">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-12 img-div">
+            <img src='{{img_base_url+rfqDetailData.product.image1}}' alt="no image" class="img-fluid m-0">
+        </div>
+
+        <div class="col-lg-9 col-md-9 col-sm-8 col-12 product-upper-desc mt-2">
+            <p><span class="prod-head">{{'Seller_Product_Categories.Product_Name'|translate}}: </span> <span
+                    class="prod-desc">{{rfqDetailData.product.name}}</span></p>
+            <p><span class="prod-head">{{'Seller_RFQ.Product_Description'|translate}}:</span> <span class="prod-desc">
+                    {{rfqDetailData.product.description}}</span></p>
+            <p><span class="prod-head">{{'Buyer_Quotation_History.Unit_Price'|translate}}: </span> <span
+                    class="prod-head">SAR{{rfqDetailData.product.unit_price}}</span></p>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 mt-3">
+            <p><span class="prod-head">{{'Seller_Dashboard.rfq_id'|translate}}: </span><span class="prod-desc"> # {{rfqDetailData.rfq[0].id}}</span>
+            </p>
+            <p><span class="prod-head">{{'Buyer_Quotation_History.Date'|translate}}: </span><span class="prod-desc">{{rfqDetailData.created_at | date :
+                    'mediumDate'}} | {{'Seller_RFQ.Time'|translate}}: {{rfqDetailData.created_at | date : 'shortTime'}}</span></p>
+            <p><span class="prod-head">{{'Seller_RFQ.Buyer_Name'|translate}}: </span><span
+                    class="prod-desc">{{rfqDetailData.buyer.full_name}}</span></p>
+            <p><span class="prod-head">{{'Buyer_Profile_Form.Address'|translate}}: </span><span
+                class="prod-desc">{{rfqDetailData.address}}</span></p>
+            <p><span class="prod-head">{{'Seller_RFQ.Quantity'|translate}}: </span><span class="prod-desc">{{rfqDetailData.quantity}}</span></p>
+            <p><span class="prod-head">{{'Buyer_Quotation_History.Message'|translate}}: </span><span
+                    class="prod-desc">{{rfqDetailData.quotation[0].message}}</span></p>
+
+
+        </div>
+    </div>
+
+</section>

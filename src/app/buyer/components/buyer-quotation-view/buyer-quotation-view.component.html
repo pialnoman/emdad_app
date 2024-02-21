@@ -1,0 +1,93 @@
+<section class="dialogue-holder" *ngIf="quotation">
+<mat-dialog-content class="mat-typography" >
+    <mat-dialog-actions align="end" class="p-0 m-0">
+        <button type="button" mat-dialog-close class="close-btn"><i class="fas fa-times mt-0 p-0"></i></button>
+    </mat-dialog-actions>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="id-div"><span class="name mr-2">{{'Buyer_Quotation_History.Quotation_ID' | translate}} :</span> <span class="deets">#
+                           {{quotation.quotation_code}}</span></div>
+                </div>
+                <br><br>
+                <div class="col-md-12">
+                    <div class="date-div"><span class="name mr-2">{{'Buyer_Quotation_History.RFQ_ID' | translate}} : </span> <span class="deet-light"># {{quotation.rfq[0].id}}</span></div>
+                </div>
+                 <br><br>
+                <div class="col-md-12">
+                    <div class="date-div"><span class="name mr-2">{{'Buyer_Quotation_History.Date' | translate}} :</span> <span class="deet-light">{{quotation.created_at | date:'medium'}}</span></div>
+                </div>
+                 <br><br>
+                <div class="col-md-12" *ngIf="quotation.seller.full_name==''">
+                    <div class="date-div"><span class="name mr-2">{{'Buyer_Quotation_History.Seller_Name' | translate}}:</span> <span class="deet-light">{{quotation.seller.store_name}}</span></div>
+                </div>
+                <div class="col-md-12" *ngIf="quotation.seller.full_name !=''">
+                    <div class="date-div"><span class="name mr-2">{{'Buyer_Quotation_History.Seller_Name' | translate}}:</span> <span class="deet-light">{{quotation.seller.full_name}}</span></div>
+                </div>
+                 <br><br>
+                <div class="col-md-12">
+                    <div class="date-div"><span class="name mr-2">{{'Buyer_Quotation_History.Qunatity' | translate}} :</span> <span class="deet-light">{{quote.quantity}}</span></div>
+                </div>
+                 <br><br>
+                <div class="col-md-12">
+                    <div class="date-div"><span class="name mr-2">{{'Buyer_Quotation_History.Unit_Price' | translate}} :</span> <span class="deet-light">SAR {{quote.unit_price}}</span></div>
+                </div>
+                 <br><br>
+                <div class="col-md-12">
+                    <div class="date-div"><span class="name mr-2">{{'Buyer_Quotation_History.Total_Price' | translate}} :</span> <span class="deet-light">SAR {{quote.total_price}}</span></div>
+                </div>
+                <br><br>
+                <div class="col-md-12">
+                    <div class="date-div"><span class="name mr-2">{{'Buyer_Quotation_History.Message' | translate}} :</span> <span class="deet-light">{{quote.message}}</span></div>
+                </div>
+                <br><br>
+                <div class="col-md-12">
+                    <div class="date-div"><span class="name">{{'Buyer_Quotation_History.Attachments' | translate}} :</span> </div>
+                </div>
+                <br><br>
+                <div class="col-md-12" *ngIf="quotation.attachment1 != null">
+
+                    <div> <a class="a-download" href="javascript:void(0);" (click)="download(quotation.attachment1);"><img
+                        src="../../../../../assets/file-up-yellow.png" class="mr-2"><span class="file-name">{{getImageName(quotation.attachment1)}}</span></a>
+                        <br><br>
+                    </div>
+                </div>
+                <div class="col-md-12" *ngIf="quotation.attachment2 != null">
+
+                    <div> <a class="a-download" href="javascript:void(0);" (click)="download(quotation.attachment2);"><img
+                        src="../../../../../assets/file-up-yellow.png" class="mr-2"><span class="file-name">ahajd.pdf</span></a>
+                        <br><br>
+                    </div>
+                </div>
+                <div class="col-md-12" *ngIf="quotation.attachment1 == null && quotation.attachment2 == null">
+
+                    <div> <span class="no-file">No attachment available</span>
+                        <br><br>
+                    </div>
+                </div>
+                 <br>
+                 <div class="col-md-12" *ngIf="quotation.status!=4 && quotation.status!=3">     
+                    <div class="form-group">
+                        <label for="description">{{'Buyer_Quotation_History.Comment' | translate}}</label>
+                        <p class="mob-warning">{{'Buyer_Quotation_History.reason_denial' | translate}}</p>
+                        <div class="input-group">
+                            <!-- description -->
+                            <textarea [(ngModel)]="comments" rows="15" id="description" class="form-control form-control-md" type="text"
+                                    placeholder="please tell us why you want to deny...">
+                            </textarea>
+                    </div>
+                </div>   
+                </div>
+                 <div  class="col-md-12 button-div">
+                    <button *ngIf="quotation.status==3" mat-raised-button class="accept-btn" type="button" (click)="check_out()">{{'Buyer_Quotation_History.Checkout' | translate}}</button>
+                    <button *ngIf="quotation.status!=3 && quotation.status!=4" [disabled]="quotation.status!=2" mat-raised-button class="accept-btn" type="button" (click)="confirm_quotation()">{{'Buyer_Quotation_History.Accept' | translate}}</button>
+                    <button *ngIf="quotation.status!=3 && quotation.status!=4" [disabled]="comments.length==0" type="button" (click)="deny_quotation()" mat-stroked-button class="deny-btn">{{'Buyer_Quotation_History.Deny' | translate}} 
+                    <span class="tooltiptext" style="color: #2b2b2b !important;">{{'Buyer_Quotation_History.reason_denial' | translate}}</span>
+                    </button>
+                 </div>
+                <br>
+            </div>
+        </div>
+</mat-dialog-content>
+</section>
+<ngx-spinner></ngx-spinner>

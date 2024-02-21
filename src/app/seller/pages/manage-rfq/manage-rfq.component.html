@@ -1,0 +1,78 @@
+<section class="payment-history container">
+  <div class="page-heading-holder">
+  <h2 class="page-heading">{{'Seller_RFQ.title'|translate}}</h2>
+  <div class="sort-btn d-inline-block big-view">
+    <button mat-stroked-button class="sort-btn" (click)="sortTable()">{{'Seller_RFQ.Sort'|translate}} </button>
+  </div>
+</div>
+<div class="mobile-name">
+  <button mat-stroked-button (click)="sortTable()">{{'Seller_RFQ.Sort'|translate}} </button>
+</div>
+  <div class="card">
+    <div class="row">
+      <div class="col-md-12 card-header">
+        <div class="row">
+          <div class="col-md-2 name">
+            {{'Seller_Dashboard.rfq_id'|translate}}
+          </div>
+          <div class="col-md-2 name">
+            {{'Seller_Dashboard.date'|translate}}
+          </div>
+          <div class="col-md-2 name">
+            {{'Buyer_Quotation_History.Status'|translate}}
+          </div>
+          <div class="col-md-4 name">
+            {{'Seller_RFQ.Buyer_Name'|translate}}
+          </div>
+          <div class="col-md-2 name">
+            
+          </div>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <!--cards if valid data-->
+      <div class="col-md-12 cards" *ngIf="rfqTableData">
+        <div class="show-values" *ngFor="let item of rfqTableData">
+          <div class="row">
+            <div class="col-lg-2 col-md-6 col-sm-6 col-12 value">
+             <span> #{{item.rfq[0].id}}</span>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6 col-12 value">
+              <span><span class="mobile-name">{{'Seller_RFQ.Created'|translate}}:</span> {{ item.created_at | date :'mediumDate' }}</span>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6 col-12 value">
+              <span *ngIf="item.rfq[0].comments == 'replied'">{{'Buyer_Quotation_History.Sent'|translate}}</span>
+              <span *ngIf="item.rfq[0].comments == 'completed'">{{'Buyer_Quotation_History.Completed'|translate}}</span>
+              <span *ngIf="item.rfq[0].comments == 'initiated'"> - </span>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 value">
+              <span><span class="mobile-name">{{'Seller_RFQ.Buyer'|translate}} :</span> {{item.buyer.full_name}}</span>
+            </div>
+            <div class="col-lg-2 col-md-12 col-sm-12 col-12 value mobile-btn">
+              <span class="big-view"><button class="edit-product-btn" mat-button (click)="openDialog(item)">{{'Buttons.View'|translate}}</button></span>
+              <span class="mobile-name"><button class="edit-product-btn mob" mat-raised-button (click)="openDialog(item)">{{'Buttons.View'|translate}}</button></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+          <!--cards if no data-->
+          <div class="col-md-12" *ngIf="rfqTableData == null || rfqTableData == undefined || rfqTableData?.length == 0">
+            <div class="no-data mt-2">
+              {{'Buyer_Order_History.No_Data'|translate}}
+            </div>
+          </div>
+      <!--pagination-->
+      <!-- <div class="col-md-12 col-12 mt-2 pagination-show" *ngIf="rfqTableData?.length > 0">
+        <mat-paginator *ngIf="rfqTableData?.length>5"
+          [length]="rfqTableData?.length" [pageSize]="10" [pageSizeOptions]="[5, 10, 15,20]"
+          (page)="getPaginatorData($event)">
+        </mat-paginator>
+      </div> -->
+    
+  
+    </div>
+  </div>
+</section>

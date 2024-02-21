@@ -1,0 +1,245 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+*:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.login_btn {
+  background: #1f4f9e;
+  border-radius: 5px;
+  margin-top: 40px;
+  font-family: Jost;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 35px;
+  text-align: center;
+  height: 80px;
+  color: #ffffff;
+}
+
+.edit-button {
+  cursor: pointer;
+}
+
+.page-header {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 69px;
+  color: #2b2b2b;
+}
+
+/* .rounded-circle {
+  display: inline-block;
+  width: 100px;
+  background: #efefef;
+  height: 100px;
+  position: relative;
+  text-align: center;
+  align-items: flex-start;
+  margin-bottom: 65px;
+} */
+
+.user-img-div {
+  position: relative;
+  margin-bottom: 65px;
+}
+
+.user-img-holder {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  vertical-align: middle;
+  background: #ddd;
+}
+
+.user-img-holder img {
+  /* position: absolute; */
+  width: 100px;
+  height: 100px;
+  background: #eee;
+  object-fit: cover;
+  /* top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); */
+}
+
+.plus-icon {
+  position: absolute;
+  top: 70px;
+  left: 80px;
+  color: #1f4f9e;
+}
+.plus-icon >i{
+  color: #ffffff !important;
+  background: #eee;
+}
+.pro-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.form-control {
+  background: #efefef;
+  border-radius: 5px;
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 29px;
+  color: black;
+  height: 80px;
+  border: none;
+}
+
+.form-label {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 29px;
+  color: #2b2b2b;
+}
+
+.container-custom {
+  border-radius: 50%;
+}
+
+#profile_pic {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.imageUploadButton {
+  position: relative;
+}
+
+.errors {
+  color: red;
+}
+
+.form-group {
+  margin-bottom: 30px;
+}
+
+.card-body {
+  padding: 40px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1600px !important;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 991px) {
+  .col-xs-none {
+    display: none;
+  }
+  .rounded-circle {
+    margin-bottom: 15px;
+    width: 70px;
+    height: 70px;
+  }
+  /* .plus-icon {
+    margin-top: 50px;
+    margin-left: 50px;
+  } */
+  .form-label {
+    font-size: 16px;
+  }
+  .form-control {
+    font-size: 16px;
+    height: 50px;
+  }
+  .login_btn {
+    height: 50px;
+    margin-top: 0;
+  }
+  .btn {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width:992px) and (max-width:1200px){
+  .col-xs-none {
+    display: none;
+  }
+  .form-label{
+    font-size: 14px;
+line-height: 20px;
+  }
+  .form-control{
+    font-size: 14px;
+    line-height: 20px;
+    height: 48px;
+    }
+  .login_btn {
+    height: 48px;
+  }
+  .btn{
+    font-size: 16px;
+    line-height: 23px;
+  }
+  .user-img-holder,.user-img-holder img{
+    height: 75px;
+    width: 75px;
+  }
+  .plus-icon{
+    top: 50px;
+    left: 60px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .col-xs-none {
+    display: none;
+  }
+  .rounded-circle {
+    margin-bottom: 15px;
+    width: 70px;
+    height: 70px;
+  }
+  /* .plus-icon {
+    margin-top: 50px;
+    margin-left: 50px;
+  } */
+  .form-label {
+    font-size: 18px;
+  }
+  .form-control {
+    font-size: 18px;
+    height: 60px;
+  }
+  .login_btn {
+    height: 60px;
+    margin-top: 0;
+  }
+  .btn {
+    font-size: 18px;
+  }
+}
